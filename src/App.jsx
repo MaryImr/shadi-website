@@ -1,11 +1,10 @@
-import './index.css'; // This is the only CSS we need
+import './index.css';
 import Hero from './features/Hero/Hero';
 
 function App() {
   return (
-    <main className="min-h-screen">
+    <main className="bg-shadi-cream min-h-screen">
       <Hero />
-      {/* Future sections like <Cast /> will go here */}
     </main>
   );
 }
