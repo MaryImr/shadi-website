@@ -55,7 +55,7 @@ const Cast = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-shadi-cream overflow-hidden">
+    <section className="pt-24 pb-12 bg-shadi-cream overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
