@@ -15,6 +15,8 @@ const CastCard = ({ member }) => {
       className={`relative snap-center min-w-[280px] md:min-w-[320px] aspect-[3/4] ${cardBg} rounded-2xl overflow-hidden border-2 ${borderColor} group`}
     >
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+      
+      {/* Photo Placeholder */}
       <div className="h-full w-full flex items-center justify-center text-shadi-gold/10">
         <span className="text-8xl font-serif italic">{member.name[0]}</span>
       </div>
@@ -33,12 +35,24 @@ const CastCard = ({ member }) => {
           {member.name}
         </h4>
         
-        <div className="h-0 group-hover:h-auto transition-all duration-500 overflow-hidden">
-          <p className="text-shadi-gold/90 text-xs border-t border-shadi-gold/30 pt-3 mt-4">
-            <span className="opacity-50 uppercase tracking-tighter">Special Ability:</span><br/>
+        {/* IMPROVED MOBILE REVEAL LOGIC */}
+        <motion.div 
+          // On mobile: it slides up when in view. On desktop: group-hover handles it.
+          className="h-0 group-hover:h-auto overflow-hidden transition-all duration-500"
+          initial={false}
+          variants={{
+            visible: { height: "auto", marginTop: "1rem", opacity: 1 },
+            hidden: { height: 0, marginTop: 0, opacity: 0 }
+          }}
+          // This "whileInView" only triggers the animation on small screens
+          whileInView={window.innerWidth < 768 ? "visible" : ""}
+          viewport={{ margin: "-100px" }} // Triggers when the card is near the center
+        >
+          <p className="text-shadi-gold/90 text-xs border-t border-shadi-gold/30 pt-3">
+            <span className="opacity-50 uppercase tracking-tighter text-[9px]">Special Ability:</span><br/>
             {member.skill}
           </p>
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );
@@ -55,7 +69,7 @@ const Cast = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-shadi-cream overflow-hidden">
+    <section className="pt-24 pb-12 bg-shadi-cream overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
