@@ -1,0 +1,118 @@
+export const castData = [
+  // THE LEADS (VIPs)
+  {
+    name: "Ramooz Tahir",
+    role: "The Groom",
+    skill: "The Hero / Infinite Sherwani Stamina",
+    side: "groom",
+    isVIP: true,
+  },
+  {
+    name: "Maryam Imran",
+    role: "The Bride",
+    skill: "The Visionary / Negotiation Queen",
+    side: "bride",
+    isVIP: true,
+  },
+  // THE EXECUTIVE PRODUCERS (VIP Parents)
+  {
+    name: "Farhat Tahir",
+    role: "Mother of the Groom",
+    skill: "The Graceful Hostess",
+    side: "groom",
+    isVIP: true,
+  },
+  {
+    name: "Tahir Mehmood",
+    role: "Father of the Groom",
+    skill: "The Logistic Legend",
+    side: "groom",
+    isVIP: true,
+  },
+  {
+    name: "Muhammad Imran",
+    role: "Father of the Bride",
+    skill: "The Pillar of Strength",
+    side: "bride",
+    isVIP: true,
+  },
+  {
+    name: "Rabiya Imran",
+    role: "Mother of the Bride",
+    skill: "Chief Emotional Support Officer",
+    side: "bride",
+    isVIP: true,
+  },
+  // THE SUPPORTING CAST - BRIDE SIDE
+  {
+    name: "Sarah Imran",
+    role: "Sister of the Bride",
+    skill: "Placeholder Skill",
+    side: "bride",
+    isVIP: false,
+  },
+  {
+    name: "Ali Imran",
+    role: "Brother of the Bride",
+    skill: "Joota Chupai Specialist",
+    side: "bride",
+    isVIP: false,
+  },
+  {
+    name: "Aaminah Imran",
+    role: "Sister of the Bride",
+    skill: "Placeholder Skill",
+    side: "bride",
+    isVIP: false,
+  },
+  {
+    name: "Ayesha Imran",
+    role: "Sister of the Bride",
+    skill: "Placeholder Skill",
+    side: "bride",
+    isVIP: false,
+  },
+  // THE SUPPORTING CAST - GROOM SIDE
+  {
+    name: "Ariha Tahir",
+    role: "Sister of the Groom",
+    skill: "Placeholder Skill",
+    side: "groom",
+    isVIP: false,
+  },
+  {
+    name: "Aqib Sajjad",
+    role: "Brother-in-law",
+    skill: "Placeholder Skill",
+    side: "groom",
+    isVIP: false,
+  },
+  {
+    name: "Waqas Tahir",
+    role: "Brother of the Groom",
+    skill: "Placeholder Skill",
+    side: "groom",
+    isVIP: false,
+  },
+  {
+    name: "Laiba Chaudhary",
+    role: "Sister-in-law",
+    skill: "Placeholder Skill",
+    side: "groom",
+    isVIP: false,
+  },
+  {
+    name: "Fatima Tahir",
+    role: "Sister of the Groom",
+    skill: "Placeholder Skill",
+    side: "groom",
+    isVIP: false,
+  },
+  {
+    name: "Ayesha Tahir",
+    role: "Sister of the Groom",
+    skill: "Placeholder Skill",
+    side: "groom",
+    isVIP: false,
+  },
+];
