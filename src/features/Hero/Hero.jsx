@@ -83,12 +83,12 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* 4. Scroll Indicator */}
+      {/* 4. Scroll Indicator - mobile only */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5 }}
-        className="absolute bottom-8 flex flex-col items-center text-shadi-gold"
+        className="absolute bottom-8 flex flex-col items-center text-shadi-gold md:hidden"
       >
         <p className="text-[10px] uppercase tracking-[0.2em] mb-2 font-bold">Scroll to Enter</p>
         <motion.div 
