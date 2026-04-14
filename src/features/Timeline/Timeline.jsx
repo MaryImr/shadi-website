@@ -105,14 +105,16 @@ const Timeline = () => {
         </div>
 
         {/* 3. The "Trademark" Style Signature Line */}
-        <div className="flex flex-col items-center">
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-shadi-gold/40 to-transparent mb-6" />
-          <p className="text-shadi-maroon/60 font-serif text-[10px] uppercase tracking-[1em] text-center ml-[1em]">
+        <div className="flex flex-col items-center mt-12">
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-shadi-gold/60 to-transparent mb-8" />
+        
+        <p className="text-shadi-maroon font-serif text-sm md:text-lg uppercase tracking-[0.8em] text-center ml-[0.8em]">
             Maryam <span className="text-shadi-gold mx-2">&</span> Ramooz
-          </p>
-          <p className="text-shadi-gold/40 font-bold text-[8px] uppercase tracking-[0.5em] mt-2">
+        </p>
+        
+        <p className="text-shadi-maroon/80 font-bold text-[10px] md:text-xs uppercase tracking-[0.4em] mt-4 bg-shadi-gold/10 px-4 py-1 rounded-full border border-shadi-gold/20">
             Est. 2026 • The Grand Finale
-          </p>
+        </p>
         </div>
 
       </div>
