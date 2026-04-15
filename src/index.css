@@ -1,90 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Manrope:wght@200;300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Manrope:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source(none);
+@source "../index.html";
+@source "./**/*.{js,jsx,ts,tsx}";
 
-:root {
-  --shadi-emerald: #1B4332;
-  --shadi-gold: #D4AF37;
-  --shadi-cream: #FAF9F6;
-  --shadi-maroon: #5A1820;
-  
-  /* Typography Variables */
-  --font-display: 'Cormorant Garamond', serif;
-  --font-ui: 'Manrope', sans-serif;
-  --font-arabic: 'Noto Naskh Arabic', serif;
-  --font-cursive: 'Great Vibes', cursive;
-  --font-serif: 'Cormorant Garamond', serif; /* Map serif to display for backward compatibility */
+@theme {
+  /* Desi Heavy Color Palette */
+  --color-shadi-maroon: #7d0a0a;
+  --color-shadi-emerald: #064e3b;
+  --color-shadi-gold: #d4af37;
+  --color-shadi-cream: #fffdf5;
+  --color-shadi-pink: #db2777;
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", serif;
+  --font-ui: "Manrope", sans-serif;
+  --font-arabic: "Noto Naskh Arabic", serif;
+  --font-cursive: "Great Vibes", cursive;
+
+  /* Backward compatibility for existing classes */
+  --font-serif: "Cormorant Garamond", serif;
 }
 
-/* 1. STRUCTURAL FIXES - Prevents white gaps at the bottom */
-html {
-  background-color: var(--shadi-cream);
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+:root {
   scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+html {
+  background-color: #faf9f6;
 }
 
 body {
   margin: 0;
-  padding: 0;
-  min-height: 100%;
-  width: 100%;
+  min-height: 100dvh;
+  background-color: #faf9f6;
   font-family: var(--font-ui);
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Fixes rubber-banding white space on mobile */
-  overscroll-behavior-y: none; 
 }
 
 #root {
-  min-height: 100vh;
-  /* Support for modern mobile browsers */
-  min-height: 100dvh; 
-  display: flex;
-  flex-direction: column;
-}
-
-/* 2. BARAAT PAGE OVERRIDE - Prevents white flashes on overscroll */
-body:has(.baraat-page-context) {
-  background-color: #3A0F14;
-}
-
-.baraat-page-context {
-  flex: 1;
-  min-height: 100vh;
   min-height: 100dvh;
-  background-color: #3A0F14;
 }
 
-/* 3. EXISTING UTILITIES (Preserved) */
-@layer utilities {
-  .font-display { font-family: var(--font-display); }
-  .font-ui { font-family: var(--font-ui); }
-  .font-arabic { font-family: var(--font-arabic); }
-  .font-cursive { font-family: var(--font-cursive); }
+/* Route-scoped viewport backgrounds */
+html.route-home,
+body.route-home {
+  background-color: #faf9f6;
 }
 
-.text-shadow-gold {
-  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
-}
-
-.text-shadow-deep {
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-}
-
-/* Custom Scrollbar (Optional but looks premium) */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--shadi-cream);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--shadi-gold);
+html.route-baraat,
+body.route-baraat {
+  background-color: #3a0f14;
 }
