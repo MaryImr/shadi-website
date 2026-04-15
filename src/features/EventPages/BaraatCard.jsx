@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import jaliPattern from '../../assets/jali.jpg';
 
@@ -188,6 +188,10 @@ function ArchCartouche() {
 
 const BaraatCard = () => {
   const [isOpened, setIsOpened] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const leftCurtainVars = {
     closed: { x: '0%' },
