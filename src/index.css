@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Manrope:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap");
+
 @import "tailwindcss" source(none);
 @source "../index.html";
 @source "./**/*.{js,jsx,ts,tsx}";
@@ -11,15 +13,30 @@
   --color-shadi-pink: #db2777;
 
   /* Typography */
-  --font-serif: "Playfair Display", serif;
+  --font-display: "Cormorant Garamond", serif;
+  --font-ui: "Manrope", sans-serif;
+  --font-arabic: "Noto Naskh Arabic", serif;
   --font-cursive: "Great Vibes", cursive;
+
+  /* Backward compatibility for existing classes */
+  --font-serif: "Cormorant Garamond", serif;
 }
 
 :root {
   scroll-behavior: smooth;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   background-color: var(--color-shadi-cream);
+  font-family: var(--font-ui);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
