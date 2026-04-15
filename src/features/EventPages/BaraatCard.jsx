@@ -191,6 +191,14 @@ const BaraatCard = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    document.documentElement.classList.add('route-baraat');
+    document.body.classList.add('route-baraat');
+
+    return () => {
+      document.documentElement.classList.remove('route-baraat');
+      document.body.classList.remove('route-baraat');
+    };
   }, []);
 
   const leftCurtainVars = {
@@ -218,7 +226,7 @@ const BaraatCard = () => {
   };
 
   return (
-    <section className="relative isolate min-h-[100svh] overflow-hidden bg-[#3A0F14] text-[#F8F1DE]">
+    <section className="relative isolate min-h-[100dvh] overflow-hidden bg-[#3A0F14] text-[#F8F1DE]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#5A1820_0%,#3A0F14_32%,#2A0B0F_68%,#1E080B_100%)]" />
 
       <div
@@ -265,7 +273,7 @@ const BaraatCard = () => {
         variants={containerVars}
         initial="hidden"
         animate={isOpened ? 'visible' : 'hidden'}
-        className="relative z-10 min-h-[100svh] px-4 py-8 sm:px-6 sm:py-10"
+        className="relative z-10 min-h-[100dvh] px-4 py-8 sm:px-6 sm:py-10"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 30, filter: 'blur(10px)' }}
@@ -284,7 +292,7 @@ const BaraatCard = () => {
                 }
               : {}
           }
-          className="mx-auto flex min-h-[calc(100svh-2rem)] max-w-5xl items-center justify-center"
+          className="mx-auto flex min-h-[calc(100dvh-2rem)] max-w-5xl items-center justify-center"
         >
           <div className="relative w-full max-w-[760px]">
             <motion.div
