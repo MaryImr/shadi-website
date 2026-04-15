@@ -3,7 +3,8 @@ import Hero from './features/Hero/Hero';
 import Cast from './features/Cast/Cast';
 import Archives from './features/Archive/Archives';
 import Timeline from './features/Timeline/Timeline';
-import BaraatCard from './features/EventPages/BaraatCard'; // New Import
+import BaraatCard from './features/EventPages/BaraatCard';
+import ScrollToTop from './components/ScrollToTop';
 
 function Home() {
   return (
@@ -19,7 +20,8 @@ function Home() {
 function App() {
   return (
     <Router>
-      <main className="bg-[#FAF9F6] min-h-screen">
+      <ScrollToTop />
+      <main className="bg-[#FAF9F6] min-h-screen flex flex-col">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/baraat" element={<BaraatCard />} />

@@ -27,9 +27,18 @@
 }
 
 html,
-body,
-#root {
+body {
+  margin: 0;
+  padding: 0;
   min-height: 100%;
+  /* This prevents the "white flash" or white gap at the bottom */
+  background-color: #FAF9F6;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
