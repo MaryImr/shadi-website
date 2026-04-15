@@ -214,7 +214,7 @@ const BaraatCard = () => {
   };
 
   return (
-    <section className="relative min-h-[100vh] w-full bg-[#3A0F14] overflow-x-hidden flex flex-col">
+    <section className="baraat-page-context relative min-h-[100dvh] w-full bg-[#3A0F14] overflow-x-hidden flex flex-col">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#5A1820_0%,#3A0F14_32%,#2A0B0F_68%,#1E080B_100%)]" />
 
       <div

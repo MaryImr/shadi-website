@@ -5,8 +5,10 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // This forces the window to the very top whenever the URL changes
-    window.scrollTo(0, 0);
+    // requestAnimationFrame ensures the scroll happens after the DOM updates
+    window.requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
   }, [pathname]);
 
   return null;
