@@ -388,26 +388,28 @@ const BaraatCard = () => {
                 <motion.div variants={itemVars} className="mx-auto mb-2 max-w-[42rem] text-center">
                   <p className="sr-only">{inviteAnchor.full}</p>
 
-                  <p className="font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.38em] text-[#FFF8EB]/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
-                    {inviteAnchor.lead}
-                  </p>
+                  {inviteAnchor.isPersonalized ? (
+                    <>
+                      <p className="font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.38em] text-[#FFF8EB]/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
+                        {inviteAnchor.lead}
+                      </p>
 
-                  <div className="mt-2.5">
-                    {inviteAnchor.isPersonalized ? (
-                      <p className="mx-auto max-w-[18ch] leading-[1]">
-                        <span className="font-cursive text-[clamp(1.95rem,5vw,3.25rem)] text-[#F0D98A] drop-shadow-[0_2px_14px_rgba(212,175,55,0.18)]">
-                          {guestName}
-                        </span>
-                        <span className="mt-1.5 block font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#FFF8EB]/88">
-                          ’S PRESENCE
-                        </span>
-                      </p>
-                    ) : (
-                      <p className="font-display text-[clamp(1.75rem,4vw,2.55rem)] uppercase tracking-[0.12em] text-[#FFF8EB] drop-shadow-[0_2px_14px_rgba(255,248,235,0.12)]">
-                        YOUR PRESENCE
-                      </p>
-                    )}
-                  </div>
+                      <div className="mt-2.5">
+                        <p className="mx-auto max-w-[18ch] leading-[1]">
+                          <span className="font-cursive text-[clamp(1.95rem,5vw,3.25rem)] text-[#F0D98A] drop-shadow-[0_2px_14px_rgba(212,175,55,0.18)]">
+                            {guestName}
+                          </span>
+                          <span className="mt-1.5 block font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#FFF8EB]/88">
+                            ’S PRESENCE
+                          </span>
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <p className="mx-auto max-w-[32rem] font-ui text-[11px] sm:text-[13px] uppercase tracking-[0.3em] leading-[1.9] text-[#FFF8EB]/94 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
+                      MR. &amp; MRS. IMRAN REQUEST YOUR PRESENCE
+                    </p>
+                  )}
 
                   <p className="mt-5 font-display text-[1.1rem] sm:text-[1.45rem] uppercase tracking-[0.26em] text-[#E7C86A]">
                     At the Baraat of
