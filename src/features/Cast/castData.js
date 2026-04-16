@@ -6,6 +6,7 @@ export const castData = [
     skill: "The Hero / Infinite Sherwani Stamina",
     side: "groom",
     isVIP: true,
+    photo: "ramooz.jpg",
   },
   {
     name: "Maryam Imran",
@@ -13,6 +14,7 @@ export const castData = [
     skill: "The Visionary / Negotiation Queen",
     side: "bride",
     isVIP: true,
+    photo: "maryam.jpg",
   },
   // THE EXECUTIVE PRODUCERS (VIP Parents)
   {
@@ -21,6 +23,7 @@ export const castData = [
     skill: "The Graceful Hostess",
     side: "groom",
     isVIP: true,
+    photo: "farhat.jpg",
   },
   {
     name: "Tahir Mehmood",
@@ -28,6 +31,7 @@ export const castData = [
     skill: "The Logistic Legend",
     side: "groom",
     isVIP: true,
+    photo: "tahir.jpg",
   },
   {
     name: "Muhammad Imran",
@@ -35,6 +39,7 @@ export const castData = [
     skill: "The Pillar of Strength",
     side: "bride",
     isVIP: true,
+    photo: "imran.jpg",
   },
   {
     name: "Rabiya Imran",
@@ -42,6 +47,7 @@ export const castData = [
     skill: "Chief Emotional Support Officer",
     side: "bride",
     isVIP: true,
+    photo: "rabiya.jpg",
   },
   // THE SUPPORTING CAST - BRIDE SIDE
   {
@@ -50,6 +56,7 @@ export const castData = [
     skill: "Placeholder Skill",
     side: "bride",
     isVIP: false,
+    photo: "sarah.jpg",
   },
   {
     name: "Ali Imran",
@@ -57,6 +64,7 @@ export const castData = [
     skill: "Joota Chupai Specialist",
     side: "bride",
     isVIP: false,
+    photo: "ali.jpg",
   },
   {
     name: "Aaminah Imran",
@@ -64,6 +72,7 @@ export const castData = [
     skill: "Placeholder Skill",
     side: "bride",
     isVIP: false,
+    photo: "aaminah.jpg",
   },
   {
     name: "Ayesha Imran",
@@ -71,6 +80,7 @@ export const castData = [
     skill: "Placeholder Skill",
     side: "bride",
     isVIP: false,
+    photo: "ayeshaI.jpg",
   },
   // THE SUPPORTING CAST - GROOM SIDE
   {
@@ -79,6 +89,7 @@ export const castData = [
     skill: "Placeholder Skill",
     side: "groom",
     isVIP: false,
+    photo: "ariha.jpg",
   },
   {
     name: "Aqib Sajjad",
@@ -86,6 +97,7 @@ export const castData = [
     skill: "Placeholder Skill",
     side: "groom",
     isVIP: false,
+    photo: "aqib.jpg",
   },
   {
     name: "Waqas Tahir",
@@ -93,6 +105,7 @@ export const castData = [
     skill: "Placeholder Skill",
     side: "groom",
     isVIP: false,
+    photo: "waqas.jpg",
   },
   {
     name: "Laiba Chaudhary",
@@ -100,6 +113,7 @@ export const castData = [
     skill: "Placeholder Skill",
     side: "groom",
     isVIP: false,
+    photo: "laiba.jpg",
   },
   {
     name: "Fatima Tahir",
@@ -107,6 +121,7 @@ export const castData = [
     skill: "Placeholder Skill",
     side: "groom",
     isVIP: false,
+    photo: "fatima.jpg",
   },
   {
     name: "Ayesha Tahir",
@@ -114,5 +129,6 @@ export const castData = [
     skill: "Placeholder Skill",
     side: "groom",
     isVIP: false,
+    photo: "ayeshaT.jpg",
   },
 ];
