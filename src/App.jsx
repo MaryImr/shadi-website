@@ -4,7 +4,8 @@ import Hero from './features/Hero/Hero';
 import Cast from './features/Cast/Cast';
 import Archives from './features/Archive/Archives';
 import Timeline from './features/Timeline/Timeline';
-import BaraatCard from './features/EventPages/BaraatCard'; // New Import
+import BaraatCard from './features/EventPages/BaraatCard';
+import WalimaCard from './features/EventPages/WalimaCard';
 
 function Home() {
 
@@ -35,7 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/baraat" element={<BaraatCard />} />
-          <Route path="/walima" element={<div className="p-20 text-center">Walima Coming Soon!</div>} />
+          <Route path="/walima" element={<WalimaCard />} />
         </Routes>
       </main>
     </Router>
