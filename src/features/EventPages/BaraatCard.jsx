@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import jaliPattern from '../../assets/jali.jpg';
+import { guestData } from './guestData';
 
 const weightedEase = [0.76, 0, 0.24, 1];
 
@@ -189,6 +191,35 @@ function ArchCartouche() {
 const BaraatCard = () => {
   const [isOpened, setIsOpened] = useState(false);
 
+  const [searchParams] = useSearchParams();
+
+  const toPossessive = (name) => {
+    const trimmed = name.trim();
+    if (!trimmed) return 'YOUR';
+    return /s$/i.test(trimmed) ? `${trimmed}'` : `${trimmed}'S`;
+  };
+
+  const guestId = searchParams.get('id')?.trim().toLowerCase() || '';
+  const guestName = guestId ? guestData[guestId] : null;
+
+  const inviteAnchor = useMemo(() => {
+    if (!guestName) {
+      return {
+        lead: 'MR. & MRS. IMRAN REQUEST',
+        focus: 'YOUR PRESENCE',
+        full: 'MR. & MRS. IMRAN REQUEST YOUR PRESENCE',
+        isPersonalized: false,
+      };
+    }
+
+    return {
+      lead: 'MR. & MRS. IMRAN REQUEST',
+      focus: `${toPossessive(guestName)} PRESENCE`,
+      full: `MR. & MRS. IMRAN REQUEST ${toPossessive(guestName)} PRESENCE`,
+      isPersonalized: true,
+    };
+  }, [guestName]);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -354,12 +385,31 @@ const BaraatCard = () => {
                   <ArchDivider />
                 </motion.div>
 
-                <motion.div variants={itemVars} className="mx-auto max-w-[34rem] text-center">
-                  <p className="font-ui text-[10px] sm:text-[11px] uppercase tracking-[0.38em] text-[#F8F1DE]/72">
-                    Mr. &amp; Mrs. Imran request the pleasure of your company
+                <motion.div variants={itemVars} className="mx-auto mb-2 max-w-[42rem] text-center">
+                  <p className="sr-only">{inviteAnchor.full}</p>
+
+                  <p className="font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.38em] text-[#FFF8EB]/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
+                    {inviteAnchor.lead}
                   </p>
 
-                  <p className="mt-4 font-display text-[1.05rem] sm:text-[1.35rem] uppercase tracking-[0.26em] text-[#E7C86A]">
+                  <div className="mt-2.5">
+                    {inviteAnchor.isPersonalized ? (
+                      <p className="mx-auto max-w-[18ch] leading-[1]">
+                        <span className="font-cursive text-[clamp(1.95rem,5vw,3.25rem)] text-[#F0D98A] drop-shadow-[0_2px_14px_rgba(212,175,55,0.18)]">
+                          {guestName}
+                        </span>
+                        <span className="mt-1.5 block font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#FFF8EB]/88">
+                          ’S PRESENCE
+                        </span>
+                      </p>
+                    ) : (
+                      <p className="font-display text-[clamp(1.75rem,4vw,2.55rem)] uppercase tracking-[0.12em] text-[#FFF8EB] drop-shadow-[0_2px_14px_rgba(255,248,235,0.12)]">
+                        YOUR PRESENCE
+                      </p>
+                    )}
+                  </div>
+
+                  <p className="mt-5 font-display text-[1.1rem] sm:text-[1.45rem] uppercase tracking-[0.26em] text-[#E7C86A]">
                     At the Baraat of
                   </p>
                 </motion.div>
