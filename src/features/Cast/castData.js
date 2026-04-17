@@ -69,7 +69,7 @@ export const castData = [
   {
     name: "Aaminah Imran",
     role: "Sister of the Bride",
-    skill: "Placeholder Skill",
+    skill: "Unpaid Merchandise Manufacturer",
     side: "bride",
     isVIP: false,
     photo: "aaminah.jpg",
@@ -77,7 +77,7 @@ export const castData = [
   {
     name: "Ayesha Imran",
     role: "Sister of the Bride",
-    skill: "Placeholder Skill",
+    skill: "The Supreme Leader of Children",
     side: "bride",
     isVIP: false,
     photo: "ayeshaI.jpg",
