@@ -108,7 +108,7 @@ export const castData = [
     photo: "waqas.jpg",
   },
   {
-    name: "Laiba Chaudhary",
+    name: "Laiba Waqas",
     role: "Sister-in-law",
     skill: "Placeholder Skill",
     side: "groom",
