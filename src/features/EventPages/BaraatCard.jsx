@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import jaliPattern from '../../assets/jali.jpg';
+import processionMark from '../../assets/procession.png';
 import { guestData } from './guestData';
 
 const weightedEase = [0.76, 0, 0.24, 1];
@@ -485,87 +486,113 @@ const BaraatCard = () => {
                   </div>
                 </motion.div>
 
-                <motion.div variants={itemVars} className="mt-3">
-                  <div className="relative overflow-hidden rounded-[2rem] border border-white/18 bg-white/[0.03] px-5 py-6 shadow-[0_20px_55px_rgba(0,0,0,0.26),inset_0_1px_0_rgba(255,255,255,0.22)] backdrop-blur-2xl sm:px-7 sm:py-7">
-                    {/* heavier frosted white body */}
-                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.10)_18%,rgba(255,255,255,0.045)_48%,rgba(255,255,255,0.10)_78%,rgba(255,255,255,0.24)_100%)]" />
+                <motion.div variants={itemVars} className="mt-4">
+                  <div className="relative overflow-hidden rounded-[2rem] border border-[#E2C35F]/24 bg-[linear-gradient(180deg,rgba(255,248,235,0.06)_0%,rgba(255,255,255,0.02)_24%,rgba(42,8,15,0.22)_100%)] px-5 py-5 shadow-[0_22px_60px_rgba(0,0,0,0.30),inset_0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-xl sm:px-7 sm:py-6">
+                    {/* warm plaque wash */}
+                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.16)_0%,rgba(255,255,255,0.06)_18%,rgba(255,255,255,0.025)_52%,rgba(255,255,255,0.07)_82%,rgba(255,255,255,0.14)_100%)]" />
 
-                    {/* milky top and bottom bloom */}
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,248,230,0.22),transparent_40%),radial-gradient(circle_at_bottom,rgba(255,248,230,0.2),transparent_40%)]" />
+                    {/* soft gold edge bloom */}
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,240,178,0.12),transparent_42%),radial-gradient(circle_at_bottom,rgba(255,240,178,0.08),transparent_44%)]" />
 
-                    {/* faint center depth so it doesn't go flat */}
-                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(30,8,11,0.04)_35%,rgba(30,8,11,0.08)_50%,rgba(30,8,11,0.04)_65%,transparent_100%)]" />
+                    {/* subtle jali atmosphere */}
+                    <div
+                      className="pointer-events-none absolute inset-0 opacity-[0.035] mix-blend-screen"
+                      style={{
+                        backgroundImage: `url(${jaliPattern})`,
+                        backgroundRepeat: 'repeat',
+                        backgroundSize: '220px auto',
+                        backgroundPosition: 'center',
+                      }}
+                    />
 
-                    {/* frosted haze */}
-                    <div className="pointer-events-none absolute inset-0 bg-white/[0.015]" />
+                    {/* inner rim */}
+                    <div className="pointer-events-none absolute inset-[1px] rounded-[calc(2rem-1px)] border border-[#E2C35F]/14" />
 
-                    {/* glass rim */}
-                    <div className="pointer-events-none absolute inset-[1px] rounded-[calc(2rem-1px)] border border-white/12" />
-
-                    {/* subtle gold tint */}
-                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(212,175,55,0.06),transparent_28%,transparent_72%,rgba(212,175,55,0.04))]" />
-
-                    <div className="relative z-10">
-                      <div className="mb-5 flex items-center justify-center gap-3 text-[#E7C86A]">
-                        <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#D4AF37]/75 sm:w-10" />
-                        <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.32em] text-[#E7C86A] drop-shadow-[0_1px_8px_rgba(0,0,0,0.22)]">
-                          Event Details
+                    <div className="relative z-10 text-center">
+                      <div className="flex items-center justify-center gap-3 text-[#E7C86A]">
+                        <div className="h-px w-9 bg-gradient-to-r from-transparent to-[#D4AF37]/65 sm:w-12" />
+                        <p className="font-ui text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.34em] text-[#E7C86A]/92">
+                          Baraat &amp; Dinner
                         </p>
-                        <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#D4AF37]/75 sm:w-10" />
+                        <div className="h-px w-9 bg-gradient-to-l from-transparent to-[#D4AF37]/65 sm:w-12" />
                       </div>
 
-                      <div className="grid gap-6 md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-8">
-                        {/* When */}
-                        <div className="text-center md:text-right">
-                          <p className="mb-2 font-ui text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E7C86A] drop-shadow-[0_1px_6px_rgba(0,0,0,0.18)]">
-                            When
+                      <div className="mt-4 flex justify-center">
+  <div className="relative flex h-24 w-32 items-center justify-center sm:h-28 sm:w-36">
+    <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(255,240,178,0.20),transparent_70%)] scale-125" />
+    <img
+      src={processionMark}
+      alt=""
+      aria-hidden="true"
+      className="relative h-full w-full object-contain scale-[1.45] opacity-100 drop-shadow-[0_6px_20px_rgba(212,175,55,0.24)]"
+    />
+  </div>
+</div>
+
+                      <div className="mt-4">
+                        <p className="font-display text-[1.65rem] sm:text-[1.95rem] leading-tight text-[#FFF8EB] drop-shadow-[0_2px_14px_rgba(0,0,0,0.22)]">
+                          Placeholder Luxury Marquee
+                        </p>
+                      </div>
+
+                      <div className="mt-5 grid grid-cols-2 gap-3 sm:gap-4">
+                        <div className="rounded-[1.15rem] border border-[#E2C35F]/18 bg-white/[0.03] px-3 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                          <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.28em] text-[#E7C86A]/84">
+                            Date
                           </p>
-                          <p className="font-display text-[1.65rem] leading-none text-[#FFF8EB] drop-shadow-[0_2px_12px_rgba(0,0,0,0.22)] sm:text-[1.8rem]">
+                          <p className="mt-2 font-display text-[1.15rem] sm:text-[1.3rem] leading-none text-[#FFF8EB]">
                             Saturday
                           </p>
-                        </div>
-
-                        {/* lifted date centerpiece */}
-                        <div className="relative mx-auto">
-                          <div className="absolute inset-0 translate-y-2 scale-[0.94] rounded-full bg-black/28 blur-xl" />
-
-                          <div className="relative flex h-[126px] w-[126px] items-center justify-center rounded-full border border-white/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.08)_42%,rgba(0,0,0,0.03)_100%)] shadow-[0_26px_55px_rgba(0,0,0,0.28),inset_0_2px_14px_rgba(255,255,255,0.20)] backdrop-blur-2xl sm:h-[140px] sm:w-[140px]">
-                            <div className="absolute -inset-[2px] rounded-full border border-[#E0BD5A]/30" />
-                            <div className="absolute inset-[10px] rounded-full border border-white/14" />
-                            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_35%_24%,rgba(255,245,210,0.30),transparent_38%,rgba(0,0,0,0.02)_100%)]" />
-
-                            <div className="relative text-center">
-                              <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.3em] text-[#E7C86A] drop-shadow-[0_1px_6px_rgba(0,0,0,0.22)]">
-                                Aug
-                              </p>
-                              <p className="mt-1 font-ui text-[3rem] leading-none font-extrabold tracking-tight text-[#FFF2C2] tabular-nums drop-shadow-[0_2px_14px_rgba(0,0,0,0.26)] sm:text-[3.3rem]">
-                                01
-                              </p>
-                              <p className="mt-1 font-ui text-[12px] font-medium uppercase tracking-[0.24em] text-[#FFF8EB]/88">
-                                2026
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Where */}
-                        <div className="text-center md:text-left">
-                          <p className="mb-2 font-ui text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E7C86A] drop-shadow-[0_1px_6px_rgba(0,0,0,0.18)]">
-                            Where
-                          </p>
-                          <p className="font-display text-[1.5rem] leading-tight text-[#FFF8EB] drop-shadow-[0_2px_12px_rgba(0,0,0,0.22)] sm:text-[1.65rem]">
-                            Placeholder Luxury Marquee
-                          </p>
-                          <p className="mt-2 font-ui text-[13px] leading-relaxed text-[#F8F1DE]/88">
-                            Plot 123, Diplomatic Enclave, Islamabad
+                          <p className="mt-2 font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.18em] text-[#F8F1DE]/84">
+                            01 August 2026
                           </p>
                         </div>
+
+                        <div className="rounded-[1.15rem] border border-[#E2C35F]/18 bg-white/[0.03] px-3 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                          <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.28em] text-[#E7C86A]/84">
+                            Time
+                          </p>
+                          <p className="mt-2 font-display text-[1.15rem] sm:text-[1.3rem] leading-none text-[#FFF8EB]">
+                            7:00 PM
+                          </p>
+                          <p className="mt-2 font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.18em] text-[#F8F1DE]/84">
+                            Onwards
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mt-4 flex items-center justify-center gap-3 text-[#E7C86A]">
+                        <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#D4AF37]/42" />
+                        <div className="h-[6px] w-[6px] rounded-full bg-[#E7C86A]/70" />
+                        <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#D4AF37]/42" />
+                      </div>
+
+                      <p className="mt-4 font-ui text-[13px] leading-relaxed text-[#F8F1DE]/86">
+                        Plot 123, Diplomatic Enclave, Islamabad
+                      </p>
+
+                      <div className="mt-5 flex justify-center">
+                        <motion.a
+                          href="#"
+                          target="_blank"
+                          rel="noreferrer"
+                          whileHover={{ y: -2, scale: 1.015 }}
+                          whileTap={{ scale: 0.985 }}
+                          className="group relative inline-flex w-full max-w-[235px] items-center justify-center overflow-hidden rounded-full px-6 py-3.5 text-center font-ui text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#2A082F] shadow-[0_16px_40px_rgba(0,0,0,0.35),inset_0_2px_8px_rgba(255,255,255,0.35)]"
+                          style={{
+                            background:
+                              'linear-gradient(135deg, #8a6319 0%, #d4af37 22%, #fff0af 50%, #c99c2d 70%, #7c5615 100%)',
+                          }}
+                        >
+                          <span className="absolute inset-0 bg-[linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.35)_20%,transparent_38%)] opacity-70 transition-transform duration-700 group-hover:translate-x-full" />
+                          <span className="relative">Location</span>
+                        </motion.a>
                       </div>
                     </div>
                   </div>
                 </motion.div>
 
-                <motion.div
+                {/* <motion.div
                   variants={itemVars}
                   className="mt-7 flex flex-col items-center gap-4"
                 >
@@ -592,7 +619,7 @@ const BaraatCard = () => {
                     <span className="absolute inset-0 bg-[linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.35)_20%,transparent_38%)] opacity-70 transition-transform duration-700 group-hover:translate-x-full" />
                     <span className="relative">Location</span>
                   </motion.a>
-                </motion.div>
+                </motion.div> */}
               </div>
             </motion.div>
           </div>
