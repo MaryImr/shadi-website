@@ -108,7 +108,7 @@ export const castData = [
     photo: "waqas.jpg",
   },
   {
-    name: "Laiba Chaudhary",
+    name: "Laiba Waqas",
     role: "Sister-in-law",
     skill: "Placeholder Skill",
     side: "groom",
@@ -118,7 +118,7 @@ export const castData = [
   {
     name: "Fatima Tahir",
     role: "Sister of the Groom",
-    skill: "Placeholder Skill",
+    skill: "Aura Comissioner",
     side: "groom",
     isVIP: false,
     photo: "fatima.jpg",

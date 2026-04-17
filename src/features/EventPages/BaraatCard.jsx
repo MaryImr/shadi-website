@@ -205,17 +205,19 @@ const BaraatCard = () => {
   const inviteAnchor = useMemo(() => {
     if (!guestName) {
       return {
-        lead: 'MR. & MRS. IMRAN REQUEST',
+        lead: 'MR. & MRS. MUHAMMAD IMRAN REQUEST',
         focus: 'YOUR PRESENCE',
-        full: 'MR. & MRS. IMRAN REQUEST YOUR PRESENCE',
+        tail: 'AT THE BARAAT OF THEIR DAUGHTER',
+        full: 'MR. & MRS. MUHAMMAD IMRAN REQUEST YOUR PRESENCE AT THE BARAAT OF THEIR DAUGHTER',
         isPersonalized: false,
       };
     }
 
     return {
-      lead: 'MR. & MRS. IMRAN REQUEST',
+      lead: 'MR. & MRS. MUHAMMAD IMRAN REQUEST',
       focus: `${toPossessive(guestName)} PRESENCE`,
-      full: `MR. & MRS. IMRAN REQUEST ${toPossessive(guestName)} PRESENCE`,
+      tail: 'AT THE BARAAT OF THEIR DAUGHTER',
+      full: `MR. & MRS. MUHAMMAD IMRAN REQUEST ${toPossessive(guestName)} PRESENCE AT THE BARAAT OF THEIR DAUGHTER`,
       isPersonalized: true,
     };
   }, [guestName]);
@@ -385,18 +387,18 @@ const BaraatCard = () => {
                   <ArchDivider />
                 </motion.div>
 
-                <motion.div variants={itemVars} className="mx-auto mb-2 max-w-[42rem] text-center">
+                <motion.div variants={itemVars} className="mx-auto mb-3 max-w-[46rem] text-center">
                   <p className="sr-only">{inviteAnchor.full}</p>
 
                   {inviteAnchor.isPersonalized ? (
                     <>
-                      <p className="font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.38em] text-[#FFF8EB]/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
+                      <p className="font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#FFF8EB]/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
                         {inviteAnchor.lead}
                       </p>
 
                       <div className="mt-2.5">
-                        <p className="mx-auto max-w-[18ch] leading-[1]">
-                          <span className="font-cursive text-[clamp(1.95rem,5vw,3.25rem)] text-[#F0D98A] drop-shadow-[0_2px_14px_rgba(212,175,55,0.18)]">
+                        <p className="mx-auto max-w-[20ch] leading-[1]">
+                          <span className="font-cursive text-[clamp(1.9rem,4.8vw,3.05rem)] text-[#F0D98A] drop-shadow-[0_2px_14px_rgba(212,175,55,0.18)]">
                             {guestName}
                           </span>
                           <span className="mt-1.5 block font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#FFF8EB]/88">
@@ -404,21 +406,27 @@ const BaraatCard = () => {
                           </span>
                         </p>
                       </div>
+
+                      <p className="mt-4 font-display text-[1.05rem] sm:text-[1.35rem] uppercase tracking-[0.22em] text-[#E7C86A]">
+                        {inviteAnchor.tail}
+                      </p>
                     </>
                   ) : (
-                    <p className="mx-auto max-w-[32rem] font-ui text-[11px] sm:text-[13px] uppercase tracking-[0.3em] leading-[1.9] text-[#FFF8EB]/94 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
-                      MR. &amp; MRS. IMRAN REQUEST YOUR PRESENCE
-                    </p>
-                  )}
+                    <>
+                      <p className="mx-auto max-w-[36rem] font-ui text-[11px] sm:text-[13px] uppercase tracking-[0.3em] leading-[1.9] text-[#FFF8EB]/94 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
+                        MR. &amp; MRS. MUHAMMAD IMRAN REQUEST YOUR PRESENCE
+                      </p>
 
-                  <p className="mt-5 font-display text-[1.1rem] sm:text-[1.45rem] uppercase tracking-[0.26em] text-[#E7C86A]">
-                    At the Baraat of
-                  </p>
+                      <p className="mt-4 font-display text-[1.05rem] sm:text-[1.35rem] uppercase tracking-[0.22em] text-[#E7C86A]">
+                        AT THE BARAAT OF THEIR DAUGHTER
+                      </p>
+                    </>
+                  )}
                 </motion.div>
 
                 <motion.div variants={itemVars} className="mb-7 mt-6 text-center">
                   <h1 className="font-display text-[clamp(2rem,5.3vw,4.15rem)] font-bold uppercase leading-[0.92] tracking-[-0.03em] text-[#FBF4E4] drop-shadow-[0_8px_25px_rgba(0,0,0,0.35)]">
-                    Ramooz Tahir
+                    Maryam Imran
                   </h1>
 
                   <p className="my-2 font-cursive text-[1.85rem] text-[#E7C86A] sm:my-3 sm:text-[2.2rem]">
@@ -426,7 +434,7 @@ const BaraatCard = () => {
                   </p>
 
                   <h1 className="font-display text-[clamp(2rem,5.3vw,4.15rem)] font-bold uppercase leading-[0.92] tracking-[-0.03em] text-[#FBF4E4] drop-shadow-[0_8px_25px_rgba(0,0,0,0.35)]">
-                    Maryam Imran
+                    Ramooz Tahir
                   </h1>
                 </motion.div>
 
