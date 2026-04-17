@@ -160,21 +160,23 @@ const WalimaCard = () => {
 
   const inviteAnchor = useMemo(() => {
     if (!guestName) {
-        return {
-        lead: 'MR. & MRS. TAHIR REQUEST THE PLEASURE OF',
+      return {
+        lead: 'MR. & MRS. TAHIR REQUEST',
         focus: 'YOUR COMPANY',
-        full: 'MR. & MRS. TAHIR REQUEST THE PLEASURE OF YOUR COMPANY',
+        tail: 'AT THE WALIMA OF THEIR SON',
+        full: 'MR. & MRS. TAHIR REQUEST YOUR COMPANY AT THE WALIMA OF THEIR SON',
         isPersonalized: false,
-        };
+      };
     }
 
     return {
-        lead: 'MR. & MRS. TAHIR REQUEST THE PLEASURE OF',
-        focus: `${toPossessive(guestName)} COMPANY`,
-        full: `MR. & MRS. TAHIR REQUEST THE PLEASURE OF ${toPossessive(guestName)} COMPANY`,
-        isPersonalized: true,
+      lead: 'MR. & MRS. TAHIR REQUEST',
+      focus: `${toPossessive(guestName)} COMPANY`,
+      tail: 'AT THE WALIMA OF THEIR SON',
+      full: `MR. & MRS. TAHIR REQUEST ${toPossessive(guestName)} COMPANY AT THE WALIMA OF THEIR SON`,
+      isPersonalized: true,
     };
-    }, [guestName]);
+  }, [guestName]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -332,13 +334,9 @@ const WalimaCard = () => {
                     )}
                 </motion.div>
 
-                <motion.div variants={itemVars} className="mt-6 flex justify-center">
-                  <PearlDivider />
-                </motion.div>
-
                 <motion.div variants={itemVars} className="mt-5 text-center">
                     <p className="font-display text-[1.15rem] italic tracking-[0.08em] text-[#E7EEEE] drop-shadow-[0_2px_14px_rgba(255,255,255,0.08)] sm:text-[1.35rem]">
-                        To celebrate the Walima of
+                        To celebrate the Walima of their Son
                     </p>
 
                     <div className="mt-5">
