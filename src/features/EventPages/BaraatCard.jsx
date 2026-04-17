@@ -187,6 +187,49 @@ function ArchCartouche() {
   );
 }
 
+function ValanceScallop() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 1440 180"
+      className="absolute bottom-0 left-0 h-20 w-full"
+      preserveAspectRatio="none"
+    >
+      <defs>
+        <linearGradient id="valanceFill" x1="0" x2="1">
+          <stop offset="0%" stopColor="#22080B" />
+          <stop offset="22%" stopColor="#3A0F14" />
+          <stop offset="50%" stopColor="#5A1820" />
+          <stop offset="78%" stopColor="#3A0F14" />
+          <stop offset="100%" stopColor="#22080B" />
+        </linearGradient>
+
+        <linearGradient id="valanceTrim" x1="0" x2="1">
+          <stop offset="0%" stopColor="#7C5615" />
+          <stop offset="22%" stopColor="#C89B2E" />
+          <stop offset="50%" stopColor="#FFF0B2" />
+          <stop offset="78%" stopColor="#D4AF37" />
+          <stop offset="100%" stopColor="#7C5615" />
+        </linearGradient>
+      </defs>
+
+      <path
+        d="M0 0H1440V92Q1380 144 1320 92T1200 92T1080 92T960 92T840 92T720 92T600 92T480 92T360 92T240 92T120 92T0 92Z"
+        fill="url(#valanceFill)"
+        opacity="0.98"
+      />
+
+      <path
+        d="M0 92Q60 144 120 92T240 92T360 92T480 92T600 92T720 92T840 92T960 92T1080 92T1200 92T1320 92T1440 92"
+        fill="none"
+        stroke="url(#valanceTrim)"
+        strokeWidth="2.5"
+        opacity="0.9"
+      />
+    </svg>
+  );
+}
+
 const BaraatCard = () => {
   const [isOpened, setIsOpened] = useState(false);
 
@@ -236,11 +279,11 @@ const BaraatCard = () => {
   const leftCurtainVars = {
     closed: { x: '0%' },
     opened: {
-      x: ['0%', '2%', '-6%', '-103%'],
+      x: ['0%', '1.5%', '-4%', '-108%'],
       transition: {
-        duration: 2.1,
+        duration: 1.85,
         ease: weightedEase,
-        times: [0, 0.12, 0.24, 1],
+        times: [0, 0.15, 0.26, 1],
       },
     },
   };
@@ -248,11 +291,11 @@ const BaraatCard = () => {
   const rightCurtainVars = {
     closed: { x: '0%' },
     opened: {
-      x: ['0%', '-2%', '6%', '103%'],
+      x: ['0%', '-1.5%', '4%', '108%'],
       transition: {
-        duration: 2.1,
+        duration: 1.85,
         ease: weightedEase,
-        times: [0, 0.12, 0.24, 1],
+        times: [0, 0.15, 0.26, 1],
       },
     },
   };
@@ -308,7 +351,7 @@ const BaraatCard = () => {
         className="relative z-10 min-h-[100dvh] px-4 py-8 sm:px-6 sm:py-10"
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.94, y: 24 }}
+          initial={{ opacity: 0, scale: 0.96, y: 20 }}
           animate={
             isOpened
               ? {
@@ -316,8 +359,8 @@ const BaraatCard = () => {
                   scale: 1,
                   y: 0,
                   transition: {
-                    delay: 0.78,
-                    duration: 0.95,
+                    delay: 0.72,
+                    duration: 0.88,
                     ease: [0.22, 1, 0.36, 1],
                   },
                 }
@@ -560,67 +603,100 @@ const BaraatCard = () => {
         {!isOpened && (
           <motion.div
             key="curtain-overlay"
-            className="fixed inset-0 z-50 flex"
-            exit={{ opacity: 0, transition: { delay: 1.35, duration: 0.45 } }}
+            className="fixed inset-0 z-50"
+            exit={{ opacity: 0, transition: { delay: 1.15, duration: 0.35 } }}
           >
-            {/* center interaction plaque */}
-            <motion.div className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center px-6">
+            {/* stage darkener */}
+            <div className="pointer-events-none absolute inset-0 bg-black/12" />
+
+            {/* top valance */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-24 sm:h-28">
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    'linear-gradient(180deg, #180708 0%, #2A0B0F 36%, #3A0F14 68%, #22080B 100%)',
+                  boxShadow:
+                    'inset 0 -18px 36px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,235,180,0.04)',
+                }}
+              />
+              <div
+                className="absolute inset-0 opacity-75"
+                style={{
+                  backgroundImage: `
+                    repeating-linear-gradient(
+                      90deg,
+                      rgba(255,255,255,0.015) 0px,
+                      rgba(255,255,255,0.015) 20px,
+                      rgba(0,0,0,0.08) 34px,
+                      rgba(255,255,255,0.008) 52px,
+                      rgba(0,0,0,0.12) 70px
+                    ),
+                    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12))
+                  `,
+                }}
+              />
+              <ValanceScallop />
+            </div>
+
+            {/* center seam shadow */}
+            <div className="pointer-events-none absolute inset-y-0 left-1/2 z-20 w-10 -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.22),transparent_72%)]" />
+
+            {/* center clasp + hanging plaque */}
+            <div className="absolute left-1/2 top-[41%] z-40 -translate-x-1/2 -translate-y-1/2">
               <motion.button
                 type="button"
                 onClick={() => setIsOpened(true)}
-                whileHover={{ y: -2, scale: 1.015 }}
+                whileHover={{ y: -1, scale: 1.015 }}
                 whileTap={{ scale: 0.975, y: 1 }}
                 initial={{ opacity: 0, scale: 0.94 }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                  y: [0, -3, 0],
-                }}
-                transition={{
-                  opacity: { duration: 0.6 },
-                  scale: { duration: 0.6 },
-                  y: { duration: 2.8, repeat: Infinity, ease: 'easeInOut' },
-                }}
-                className="pointer-events-auto relative overflow-hidden rounded-[1.75rem] border border-[#E7C86A]/30 bg-[linear-gradient(180deg,rgba(255,248,235,0.10)_0%,rgba(255,255,255,0.03)_100%)] px-8 py-6 shadow-[0_22px_60px_rgba(0,0,0,0.38),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl"
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                className="relative"
               >
-                {/* subtle gloss */}
-                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.16),transparent_28%,transparent_68%,rgba(255,255,255,0.06))]" />
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#E7C86A]/45 bg-[radial-gradient(circle_at_35%_30%,#fff1b7_0%,#ddb84d_30%,#9c6e1f_78%,#67460f_100%)] shadow-[0_12px_28px_rgba(0,0,0,0.36),inset_0_2px_5px_rgba(255,255,255,0.18)]">
+                  <div className="h-6 w-6 rounded-full border border-white/35" />
+                </div>
 
-                {/* inner border */}
-                <div className="pointer-events-none absolute inset-[1px] rounded-[calc(1.75rem-1px)] border border-white/8" />
+                <div className="mx-auto h-7 w-px bg-gradient-to-b from-[#D4AF37] to-transparent opacity-85" />
 
-                <div className="relative text-center">
-                  <p className="font-cursive text-[2.2rem] leading-none text-[#F0D98A] sm:text-[2.6rem]">
-                    Open Invitation
-                  </p>
+                <div className="relative overflow-hidden rounded-[1.4rem] border border-[#E7C86A]/28 bg-[linear-gradient(180deg,rgba(255,248,235,0.10)_0%,rgba(255,255,255,0.03)_100%)] px-6 py-4 shadow-[0_20px_44px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.14)]">
+                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.14),transparent_30%,transparent_72%,rgba(255,255,255,0.05))]" />
+                  <div className="pointer-events-none absolute inset-[1px] rounded-[calc(1.4rem-1px)] border border-white/8" />
 
-                  <div className="mx-auto mt-3 flex items-center justify-center gap-3">
-                    <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#D4AF37]/70" />
-                    <div className="h-[7px] w-[7px] rounded-full bg-[#D4AF37]/80 shadow-[0_0_12px_rgba(212,175,55,0.35)]" />
-                    <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#D4AF37]/70" />
+                  <div className="relative text-center">
+                    <p className="font-cursive text-[2rem] leading-none text-[#F0D98A] sm:text-[2.35rem]">
+                      Open Invitation
+                    </p>
+
+                    <div className="mx-auto mt-3 flex items-center justify-center gap-3">
+                      <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#D4AF37]/70" />
+                      <div className="h-[7px] w-[7px] rounded-full bg-[#D4AF37]/82 shadow-[0_0_12px_rgba(212,175,55,0.28)]" />
+                      <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#D4AF37]/70" />
+                    </div>
+
+                    <p className="mt-3 font-ui text-[10px] font-semibold uppercase tracking-[0.42em] text-[#F8F1DE]/74">
+                      Tap to Reveal
+                    </p>
                   </div>
-
-                  <p className="mt-4 font-ui text-[10px] font-semibold uppercase tracking-[0.48em] text-[#F8F1DE]/72">
-                    Tap to Reveal
-                  </p>
                 </div>
               </motion.button>
-            </motion.div>
+            </div>
 
-            {/* left curtain */}
+            {/* left drape */}
             <motion.div
               variants={leftCurtainVars}
               initial="closed"
               animate={isOpened ? 'opened' : 'closed'}
-              className="relative h-full w-1/2 overflow-hidden border-r border-[#E7C86A]/12"
+              className="absolute inset-y-0 left-0 z-20 w-[52%] overflow-hidden rounded-r-[2rem] border-r border-[#E7C86A]/14"
               style={{
+                willChange: 'transform',
                 background:
                   'linear-gradient(90deg, #120506 0%, #1E080B 16%, #3A0F14 34%, #5A1820 52%, #341014 70%, #180708 100%)',
                 boxShadow:
                   'inset -26px 0 52px rgba(0,0,0,0.50), inset 0 0 0 1px rgba(255,235,180,0.04)',
               }}
             >
-              {/* velvet folds */}
               <div
                 className="absolute inset-0 opacity-85"
                 style={{
@@ -639,23 +715,26 @@ const BaraatCard = () => {
                 }}
               />
 
-              {/* moving velvet sheen */}
+              {/* center gathers */}
+              <div className="absolute inset-y-0 right-0 w-12 bg-[linear-gradient(90deg,rgba(0,0,0,0.20),rgba(255,255,255,0.03),rgba(0,0,0,0.16))] opacity-90" />
+
+              {/* static sheen */}
               <div className="absolute inset-y-0 right-10 w-20 bg-[linear-gradient(90deg,transparent,rgba(255,241,198,0.10),transparent)] opacity-70 blur-sm" />
 
-              {/* center trim */}
-              <div className="absolute right-0 top-1/2 h-40 w-[2px] -translate-y-1/2 bg-gradient-to-b from-transparent via-[#D4AF37] to-transparent opacity-75" />
+              {/* gold trim */}
+              <div className="absolute right-0 top-1/2 h-44 w-[2px] -translate-y-1/2 bg-gradient-to-b from-transparent via-[#D4AF37] to-transparent opacity-80" />
 
-              {/* bottom fade */}
               <div className="absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.16))]" />
             </motion.div>
 
-            {/* right curtain */}
+            {/* right drape */}
             <motion.div
               variants={rightCurtainVars}
               initial="closed"
               animate={isOpened ? 'opened' : 'closed'}
-              className="relative h-full w-1/2 overflow-hidden border-l border-[#E7C86A]/12"
+              className="absolute inset-y-0 right-0 z-20 w-[52%] overflow-hidden rounded-l-[2rem] border-l border-[#E7C86A]/14"
               style={{
+                willChange: 'transform',
                 background:
                   'linear-gradient(270deg, #120506 0%, #1E080B 16%, #3A0F14 34%, #5A1820 52%, #341014 70%, #180708 100%)',
                 boxShadow:
@@ -680,9 +759,15 @@ const BaraatCard = () => {
                 }}
               />
 
+              {/* center gathers */}
+              <div className="absolute inset-y-0 left-0 w-12 bg-[linear-gradient(90deg,rgba(0,0,0,0.16),rgba(255,255,255,0.03),rgba(0,0,0,0.20))] opacity-90" />
+
+              {/* static sheen */}
               <div className="absolute inset-y-0 left-10 w-20 bg-[linear-gradient(90deg,transparent,rgba(255,241,198,0.10),transparent)] opacity-70 blur-sm" />
 
-              <div className="absolute left-0 top-1/2 h-40 w-[2px] -translate-y-1/2 bg-gradient-to-b from-transparent via-[#D4AF37] to-transparent opacity-75" />
+              {/* gold trim */}
+              <div className="absolute left-0 top-1/2 h-44 w-[2px] -translate-y-1/2 bg-gradient-to-b from-transparent via-[#D4AF37] to-transparent opacity-80" />
+
               <div className="absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.16))]" />
             </motion.div>
           </motion.div>
