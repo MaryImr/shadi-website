@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import floralPattern from '../../assets/floral.jpg';
+import engravingPattern from '../../assets/engraving.png';
 import { guestData } from './guestData';
 
 const veilEase = [0.19, 1, 0.22, 1];
@@ -356,79 +357,106 @@ const WalimaCard = () => {
 
                 {/* distinctly different event plaque */}
                 <motion.div variants={itemVars} className="mt-8">
-                  <div className="relative overflow-hidden rounded-[1.8rem] border border-white/14 bg-white/[0.045] px-5 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-2xl sm:px-6 sm:py-6">
-                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.07)_22%,rgba(255,255,255,0.025)_54%,rgba(255,255,255,0.09)_84%,rgba(255,255,255,0.16)_100%)]" />
-                    <div className="pointer-events-none absolute inset-[1px] rounded-[calc(1.8rem-1px)] border border-white/10" />
+                  <div className="text-center">
+                    <p className="font-ui text-[10px] sm:text-[11px] uppercase tracking-[0.34em] text-[#DDE5E5]/84">
+                      An Evening in Lahore
+                    </p>
+                  </div>
+
+                  <div className="relative mt-4 overflow-hidden rounded-[1.9rem] border border-white/14 bg-white/[0.04] px-5 py-6 shadow-[0_18px_50px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-2xl sm:px-6 sm:py-6">
+                    {/* engraved silver wash */}
+                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.17)_0%,rgba(255,255,255,0.07)_24%,rgba(255,255,255,0.025)_54%,rgba(255,255,255,0.09)_82%,rgba(255,255,255,0.15)_100%)]" />
+
+                    {/* engraving watermark */}
+                    <div
+                      className="pointer-events-none absolute inset-0 opacity-[0.11] mix-blend-screen"
+                      style={{
+                        backgroundImage: `url(${engravingPattern})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                      }}
+                    />
+
+                    {/* silver edge */}
+                    <div className="pointer-events-none absolute inset-[1px] rounded-[calc(1.9rem-1px)] border border-white/10" />
+
+                    {/* soft top/bottom pearl glow */}
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_42%),radial-gradient(circle_at_bottom,rgba(255,255,255,0.08),transparent_46%)]" />
 
                     <div className="relative z-10">
-                      <div className="mb-4 flex items-center justify-center gap-3 text-[#DDE5E5]">
+                      <div className="mb-5 flex items-center justify-center gap-3 text-[#DDE5E5]">
                         <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#DDE5E5]/65" />
                         <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.3em] text-[#F7F5F0]/92">
-                          Event Details
+                          Reception Details
                         </p>
                         <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#DDE5E5]/65" />
                       </div>
 
-                      <div className="grid gap-4 md:grid-cols-[1.1fr_0.95fr_1.25fr] md:items-stretch">
-                        {/* Day / time */}
-                        <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.03] px-4 py-4 text-center md:text-right">
-                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#C7D0D0]/90">
-                            When
-                          </p>
-                          <p className="mt-2 font-display text-[1.6rem] leading-none text-[#FFFFFF]">
-                            Sunday
-                          </p>
-                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#DDE5E5]/88">
-                            7:00 PM onwards
-                          </p>
-                        </div>
-
-                        {/* central plaque */}
-                        <div className="rounded-[1.35rem] border border-white/16 bg-[linear-gradient(180deg,rgba(255,255,255,0.16)_0%,rgba(255,255,255,0.05)_100%)] px-4 py-4 text-center shadow-[0_12px_28px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl">
+                      <div className="grid gap-5 md:grid-cols-[1fr_1.25fr_1fr] md:items-center">
+                        {/* left meta */}
+                        <div className="text-center md:text-left">
                           <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#C7D0D0]/90">
                             Date
                           </p>
-                          <p className="mt-2 font-display text-[1.2rem] uppercase tracking-[0.22em] text-[#E7EEEE]">
-                            Aug
+                          <p className="mt-2 font-display text-[1.45rem] leading-none text-[#FFFFFF]">
+                            Sunday
                           </p>
-                          <p className="font-ui text-[2.85rem] font-extrabold leading-none tracking-tight text-[#FFFFFF] tabular-nums">
-                            02
-                          </p>
-                          <p className="mt-1 font-ui text-[12px] uppercase tracking-[0.22em] text-[#DDE5E5]/88">
-                            2026
+                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#DDE5E5]/88">
+                            02 August 2026
                           </p>
                         </div>
 
-                        {/* venue */}
-                        <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.03] px-4 py-4 text-center md:text-left">
+                        {/* center venue hero */}
+                        <div className="relative text-center px-2">
+                          <div className="absolute left-0 top-1/2 hidden h-px w-8 -translate-y-1/2 bg-gradient-to-r from-transparent to-[#DDE5E5]/45 md:block" />
+                          <div className="absolute right-0 top-1/2 hidden h-px w-8 -translate-y-1/2 bg-gradient-to-l from-transparent to-[#DDE5E5]/45 md:block" />
+
                           <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#C7D0D0]/90">
-                            Where
+                            Venue
                           </p>
-                          <p className="mt-2 font-display text-[1.45rem] leading-tight text-[#FFFFFF]">
+                          <p className="mt-2 font-display text-[1.65rem] sm:text-[1.85rem] leading-tight text-[#FFFFFF] drop-shadow-[0_2px_14px_rgba(255,255,255,0.08)]">
                             Moonlit Garden Marquee
                           </p>
-                          <p className="mt-2 font-ui text-[13px] leading-relaxed text-[#F7F5F0]/84">
-                            Plot 123, Diplomatic Enclave, Islamabad
+                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#DDE5E5]/82">
+                            Reception &amp; Dinner
+                          </p>
+                        </div>
+
+                        {/* right meta */}
+                        <div className="text-center md:text-right">
+                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#C7D0D0]/90">
+                            Time
+                          </p>
+                          <p className="mt-2 font-display text-[1.45rem] leading-none text-[#FFFFFF]">
+                            7:00 PM
+                          </p>
+                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#DDE5E5]/88">
+                            Onwards
                           </p>
                         </div>
                       </div>
 
-                      <div className="mt-5 flex flex-col items-center gap-4">
-                        <div className="flex items-center gap-3 text-[#DDE5E5]">
-                          <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#DDE5E5]/60" />
-                          <p className="font-ui text-[10px] uppercase tracking-[0.36em] text-[#DDE5E5]/88">
-                            Dinner &amp; Reception
-                          </p>
-                          <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#DDE5E5]/60" />
-                        </div>
+                      <div className="mt-5 flex items-center justify-center gap-3 text-[#DDE5E5]">
+                        <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#DDE5E5]/45" />
+                        <div className="h-[6px] w-[6px] rounded-full bg-[#F7F5F0]/80" />
+                        <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#DDE5E5]/45" />
+                      </div>
 
+                      <div className="mt-4 text-center">
+                        <p className="font-ui text-[13px] leading-relaxed text-[#F7F5F0]/84">
+                          123 Canal Side Avenue, Lahore
+                        </p>
+                      </div>
+
+                      <div className="mt-6 flex justify-center">
                         <motion.a
                           href="#"
                           target="_blank"
                           rel="noreferrer"
                           whileHover={{ y: -2, scale: 1.015 }}
                           whileTap={{ scale: 0.985 }}
-                          className="group relative inline-flex w-full max-w-[250px] items-center justify-center overflow-hidden rounded-full border border-white/18 bg-[linear-gradient(135deg,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.10)_30%,rgba(221,229,229,0.18)_62%,rgba(255,255,255,0.08)_100%)] px-6 py-3.5 text-center font-ui text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#0A1F1F] shadow-[0_16px_38px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.30)] backdrop-blur-xl"
+                          className="group relative inline-flex w-full max-w-[240px] items-center justify-center overflow-hidden rounded-full border border-white/18 bg-[linear-gradient(135deg,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.10)_30%,rgba(221,229,229,0.18)_62%,rgba(255,255,255,0.08)_100%)] px-6 py-3.5 text-center font-ui text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#0A1F1F] shadow-[0_16px_38px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.30)] backdrop-blur-xl"
                         >
                           <span className="absolute inset-0 bg-[linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.40)_20%,transparent_38%)] opacity-80 transition-transform duration-700 group-hover:translate-x-full" />
                           <span className="relative">Location</span>
