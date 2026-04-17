@@ -118,7 +118,7 @@ export const castData = [
   {
     name: "Fatima Tahir",
     role: "Sister of the Groom",
-    skill: "Placeholder Skill",
+    skill: "Aura Comissioner",
     side: "groom",
     isVIP: false,
     photo: "fatima.jpg",
