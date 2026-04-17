@@ -17,13 +17,12 @@ const containerVars = {
 };
 
 const itemVars = {
-  hidden: { opacity: 0, y: 22, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: 22 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
     transition: {
-      duration: 0.9,
+      duration: 0.82,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -309,17 +308,16 @@ const BaraatCard = () => {
         className="relative z-10 min-h-[100dvh] px-4 py-8 sm:px-6 sm:py-10"
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 30, filter: 'blur(10px)' }}
+          initial={{ opacity: 0, scale: 0.94, y: 24 }}
           animate={
             isOpened
               ? {
                   opacity: 1,
                   scale: 1,
                   y: 0,
-                  filter: 'blur(0px)',
                   transition: {
-                    delay: 0.85,
-                    duration: 1.2,
+                    delay: 0.78,
+                    duration: 0.95,
                     ease: [0.22, 1, 0.36, 1],
                   },
                 }
@@ -642,11 +640,7 @@ const BaraatCard = () => {
               />
 
               {/* moving velvet sheen */}
-              <motion.div
-                animate={{ x: ['-25%', '10%', '-25%'] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute inset-y-0 right-10 w-24 bg-[linear-gradient(90deg,transparent,rgba(255,241,198,0.14),transparent)] blur-md"
-              />
+              <div className="absolute inset-y-0 right-10 w-20 bg-[linear-gradient(90deg,transparent,rgba(255,241,198,0.10),transparent)] opacity-70 blur-sm" />
 
               {/* center trim */}
               <div className="absolute right-0 top-1/2 h-40 w-[2px] -translate-y-1/2 bg-gradient-to-b from-transparent via-[#D4AF37] to-transparent opacity-75" />
@@ -686,11 +680,7 @@ const BaraatCard = () => {
                 }}
               />
 
-              <motion.div
-                animate={{ x: ['25%', '-10%', '25%'] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute inset-y-0 left-10 w-24 bg-[linear-gradient(90deg,transparent,rgba(255,241,198,0.14),transparent)] blur-md"
-              />
+              <div className="absolute inset-y-0 left-10 w-20 bg-[linear-gradient(90deg,transparent,rgba(255,241,198,0.10),transparent)] opacity-70 blur-sm" />
 
               <div className="absolute left-0 top-1/2 h-40 w-[2px] -translate-y-1/2 bg-gradient-to-b from-transparent via-[#D4AF37] to-transparent opacity-75" />
               <div className="absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.16))]" />
