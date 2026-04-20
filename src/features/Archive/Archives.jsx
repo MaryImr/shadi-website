@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const archiveMoments = [
   // Engagement
-  { id: 1, title: "The Promise", event: "Once Upon A Time", url: new URL('../../assets/ArchiveAssets/engagement1.jpg', import.meta.url).href },
+  { id: 1, title: "ODTU '23", event: "Once Upon A Time", url: new URL('../../assets/ArchiveAssets/engagement1.jpg', import.meta.url).href },
   { id: 2, title: "The Ring", event: "Engagement", url: new URL('../../assets/ArchiveAssets/engagement2.jpeg', import.meta.url).href },
   { id: 3, title: "Sweet Beginnings", event: "Engagement", url: new URL('../../assets/ArchiveAssets/engagement3.jpeg', import.meta.url).href },
   // Nikkah
