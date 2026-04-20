@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 
 const archiveMoments = [
   // Engagement
-  { id: 1, title: "The Promise", event: "Engagement", url: "https://placehold.co/600x800/7D0A0A/D4AF37?text=Engagement+1" },
-  { id: 2, title: "The Ring", event: "Engagement", url: "https://placehold.co/600x800/7D0A0A/D4AF37?text=Engagement+2" },
-  { id: 3, title: "Sweet Beginnings", event: "Engagement", url: "https://placehold.co/600x800/7D0A0A/D4AF37?text=Engagement+3" },
+  { id: 1, title: "The Promise", event: "Once Upon A Time", url: new URL('../../assets/ArchiveAssets/engagement1.jpg', import.meta.url).href },
+  { id: 2, title: "The Ring", event: "Engagement", url: new URL('../../assets/ArchiveAssets/engagement2.jpeg', import.meta.url).href },
+  { id: 3, title: "Sweet Beginnings", event: "Engagement", url: new URL('../../assets/ArchiveAssets/engagement3.jpeg', import.meta.url).href },
   // Nikkah
-  { id: 4, title: "The Signature", event: "Nikkah", url: "https://placehold.co/600x800/064e3b/D4AF37?text=Nikkah+1" },
-  { id: 5, title: "The Qubool Hai", event: "Nikkah", url: "https://placehold.co/600x800/064e3b/D4AF37?text=Nikkah+2" },
-  { id: 6, title: "First Walk", event: "Nikkah", url: "https://placehold.co/600x800/064e3b/D4AF37?text=Nikkah+3" },
-  { id: 7, title: "Family Portraits", event: "Nikkah", url: "https://placehold.co/600x800/064e3b/D4AF37?text=Nikkah+4" },
+  { id: 4, title: "The Signature", event: "Nikkah", url: new URL('../../assets/ArchiveAssets/nikkah1.jpg', import.meta.url).href },
+  { id: 5, title: "The Qubool Hai", event: "Nikkah", url: new URL('../../assets/ArchiveAssets/nikkah2.jpg', import.meta.url).href },
+  { id: 6, title: "First Walk", event: "Nikkah", url: new URL('../../assets/ArchiveAssets/nikkah3.jpg', import.meta.url).href },
+  { id: 7, title: "Family Portraits", event: "Nikkah", url: new URL('../../assets/ArchiveAssets/nikkah4.png', import.meta.url).href },
 ];
 
 const Archives = () => {
