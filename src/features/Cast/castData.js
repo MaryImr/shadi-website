@@ -126,7 +126,7 @@ export const castData = [
   {
     name: "Ayesha Tahir",
     role: "Sister of the Groom",
-    skill: "Placeholder Skill",
+    skill: "Shaadi Moments Ki Jasoos",
     side: "groom",
     isVIP: false,
     photo: "ayeshaT.jpg",

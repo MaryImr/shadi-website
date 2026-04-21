@@ -48,6 +48,10 @@ const CastCard = ({ member, photoSrc }) => {
     ? 'border-shadi-gold shadow-[0_0_20px_rgba(212,175,55,0.4)]'
     : 'border-shadi-gold/20';
 
+  // Deterministic "Randomness" so it doesn't flicker on re-renders
+  const isLeft = member.name.length % 2 === 0; 
+  const randomRotation = (member.name.length % 10) - 5; // Slight variation in tilt
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -55,15 +59,52 @@ const CastCard = ({ member, photoSrc }) => {
       viewport={{ once: true }}
       className={`relative snap-center min-w-[280px] md:min-w-[320px] aspect-[3/4] ${cardBg} rounded-2xl overflow-hidden border-2 ${borderColor} group`}
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+      {/* 1. PAPARAZZI FLASH */}
+      <motion.div
+        initial={{ x: '-100%', skewX: -20 }}
+        whileInView={{ x: '200%' }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        className="absolute inset-0 z-20 bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none"
+      />
 
-      {/* Portrait / fallback */}
-      <div className="absolute inset-0">
+      {/* 2. THE CUTE TAG (Bottom Left or Right) */}
+      {member.skill && (
+        <motion.div
+          initial={{ y: 20, opacity: 0, scale: 0.8 }}
+          whileInView={{ y: 0, opacity: 1, scale: 1, rotate: isLeft ? -12 + randomRotation : 12 + randomRotation }}
+          transition={{ 
+            type: "spring", 
+            stiffness: 200, 
+            damping: 15, 
+            delay: 0.7 
+          }}
+          className={`absolute bottom-28 ${isLeft ? 'left-4' : 'right-4'} z-40 pointer-events-none origin-center`}
+        >
+          {/* The Tag Body */}
+          <div className="bg-shadi-cream border-2 border-shadi-gold rounded-2xl px-2 py-3 shadow-2xl flex flex-col items-center min-w-[65px] max-w-[85px]">
+            {/* Tiny "Safety Pin" or String Hole */}
+            <div className="w-2 h-2 rounded-full bg-shadi-gold/40 border border-shadi-gold mb-2" />
+            
+            {/* <span className="text-[7px] text-shadi-maroon font-bold uppercase tracking-widest opacity-40 mb-1">
+              VIBE
+            </span>
+
+            <div className="h-[1px] w-full bg-shadi-gold/20 mb-2" /> */}
+
+            {/* The Skill */}
+            <p className="font-serif text-shadi-emerald text-[10px] font-black leading-tight text-center break-words uppercase px-1">
+              {member.skill}
+            </p>
+          </div>
+        </motion.div>
+      )}
+
+      {/* 3. Portrait */}
+      <div className="absolute inset-0 z-0">
         {photoSrc ? (
           <img
             src={photoSrc}
             alt={member.name}
-            loading="lazy"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
@@ -73,42 +114,24 @@ const CastCard = ({ member, photoSrc }) => {
         )}
       </div>
 
-      {/* Extra subtle top vignette for cinematic depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent z-10 pointer-events-none" />
+      {/* 4. Cinematic Gradients */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 pointer-events-none" />
 
+      {/* 5. Starring Badge */}
       {member.isVIP && (
-        <div className="absolute top-4 right-4 z-20 bg-shadi-gold text-shadi-maroon text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter shadow-lg">
+        <div className="absolute top-4 right-4 z-30 bg-shadi-gold text-shadi-maroon text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter shadow-lg">
           Starring
         </div>
       )}
 
-      <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+      {/* 6. Footer Content */}
+      <div className="absolute bottom-0 left-0 right-0 p-6 z-30">
         <p className="text-shadi-gold text-[10px] uppercase font-bold tracking-[0.2em] mb-1 italic">
           {member.role}
         </p>
-
         <h4 className="text-shadi-cream font-serif text-2xl md:text-3xl font-bold leading-tight">
           {member.name}
         </h4>
-
-        <motion.div
-          className="h-0 group-hover:h-auto overflow-hidden transition-all duration-500"
-          initial={false}
-          variants={{
-            visible: { height: 'auto', marginTop: '1rem', opacity: 1 },
-            hidden: { height: 0, marginTop: 0, opacity: 0 },
-          }}
-          whileInView={window.innerWidth < 768 ? 'visible' : ''}
-          viewport={{ margin: '-100px' }}
-        >
-          <p className="text-shadi-gold/90 text-xs border-t border-shadi-gold/30 pt-3">
-            <span className="opacity-50 uppercase tracking-tighter text-[9px]">
-              Special Ability:
-            </span>
-            <br />
-            {member.skill}
-          </p>
-        </motion.div>
       </div>
     </motion.div>
   );
