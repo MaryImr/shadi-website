@@ -7,7 +7,7 @@ const events = [
     episode: "Episode II",
     title: "The Baraat",
     date: "August 1st, 2026",
-    venue: "Placeholder Venue Name, City",
+    venue: "Islamabad Hotel, Islamabad",
     time: "7:00 PM onwards",
     theme: "bg-shadi-maroon",
     accent: "text-shadi-gold"
@@ -17,8 +17,8 @@ const events = [
     episode: "Episode III",
     title: "The Walima",
     date: "August 3rd, 2026",
-    venue: "Placeholder Venue Name, City",
-    time: "8:00 PM onwards",
+    venue: "Placeholder Venue Name, Lahore",
+    time: "7:00 PM onwards",
     theme: "bg-shadi-emerald",
     accent: "text-shadi-gold"
   }
