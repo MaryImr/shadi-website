@@ -164,7 +164,7 @@ const WalimaCard = () => {
       return {
         lead: 'MR. & MRS. TAHIR REQUEST',
         focus: 'YOUR COMPANY',
-        tail: 'AT THE WALIMA OF THEIR SON',
+        tail: 'AT THE WALIMA OF THEIR BELOVED SON',
         full: 'MR. & MRS. TAHIR REQUEST YOUR COMPANY AT THE WALIMA OF THEIR SON',
         isPersonalized: false,
       };
@@ -173,7 +173,7 @@ const WalimaCard = () => {
     return {
       lead: 'MR. & MRS. TAHIR REQUEST',
       focus: `${toPossessive(guestName)} COMPANY`,
-      tail: 'AT THE WALIMA OF THEIR SON',
+      tail: 'AT THE WALIMA OF THEIR BELOVED SON',
       full: `MR. & MRS. TAHIR REQUEST ${toPossessive(guestName)} COMPANY AT THE WALIMA OF THEIR SON`,
       isPersonalized: true,
     };
@@ -337,7 +337,7 @@ const WalimaCard = () => {
 
                 <motion.div variants={itemVars} className="mt-5 text-center">
                     <p className="font-display text-[1.15rem] italic tracking-[0.08em] text-[#E7EEEE] drop-shadow-[0_2px_14px_rgba(255,255,255,0.08)] sm:text-[1.35rem]">
-                        To celebrate the Walima of their Son
+                        To celebrate the Walima of their Beloved Son
                     </p>
 
                     <div className="mt-5">
@@ -400,10 +400,10 @@ const WalimaCard = () => {
                             Date
                           </p>
                           <p className="mt-2 font-display text-[1.45rem] leading-none text-[#FFFFFF]">
-                            Sunday
+                            Monday
                           </p>
                           <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#DDE5E5]/88">
-                            02 August 2026
+                            03 August 2026
                           </p>
                         </div>
 
