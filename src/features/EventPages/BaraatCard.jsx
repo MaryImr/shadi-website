@@ -250,7 +250,7 @@ const BaraatCard = () => {
       return {
         lead: 'MR. & MRS. MUHAMMAD IMRAN REQUEST',
         focus: 'YOUR PRESENCE',
-        tail: 'AT THE BARAAT OF THEIR DAUGHTER',
+        tail: 'AT THE BARAAT OF THEIR BELOVED DAUGHTER',
         full: 'MR. & MRS. MUHAMMAD IMRAN REQUEST YOUR PRESENCE AT THE BARAAT OF THEIR DAUGHTER',
         isPersonalized: false,
       };
@@ -259,7 +259,7 @@ const BaraatCard = () => {
     return {
       lead: 'MR. & MRS. MUHAMMAD IMRAN REQUEST',
       focus: `${toPossessive(guestName)} PRESENCE`,
-      tail: 'AT THE BARAAT OF THEIR DAUGHTER',
+      tail: 'AT THE BARAAT OF THEIR BELOVED DAUGHTER',
       full: `MR. & MRS. MUHAMMAD IMRAN REQUEST ${toPossessive(guestName)} PRESENCE AT THE BARAAT OF THEIR DAUGHTER`,
       isPersonalized: true,
     };
@@ -460,7 +460,7 @@ const BaraatCard = () => {
                       </p>
 
                       <p className="mt-4 font-display text-[1.05rem] sm:text-[1.35rem] uppercase tracking-[0.22em] text-[#E7C86A]">
-                        AT THE BARAAT OF THEIR DAUGHTER
+                        AT THE BARAAT OF THEIR BELOVED DAUGHTER
                       </p>
                     </>
                   )}
@@ -518,20 +518,20 @@ const BaraatCard = () => {
                       </div>
 
                       <div className="mt-4 flex justify-center">
-  <div className="relative flex h-24 w-32 items-center justify-center sm:h-28 sm:w-36">
-    <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(255,240,178,0.20),transparent_70%)] scale-125" />
-    <img
-      src={processionMark}
-      alt=""
-      aria-hidden="true"
-      className="relative h-full w-full object-contain scale-[1.45] opacity-100 drop-shadow-[0_6px_20px_rgba(212,175,55,0.24)]"
-    />
-  </div>
-</div>
+                        <div className="relative flex h-24 w-32 items-center justify-center sm:h-28 sm:w-36">
+                          <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(255,240,178,0.20),transparent_70%)] scale-125" />
+                          <img
+                            src={processionMark}
+                            alt=""
+                            aria-hidden="true"
+                            className="relative h-full w-full object-contain scale-[1.45] opacity-100 drop-shadow-[0_6px_20px_rgba(212,175,55,0.24)]"
+                          />
+                        </div>
+                      </div>
 
                       <div className="mt-4">
                         <p className="font-display text-[1.65rem] sm:text-[1.95rem] leading-tight text-[#FFF8EB] drop-shadow-[0_2px_14px_rgba(0,0,0,0.22)]">
-                          Placeholder Luxury Marquee
+                          Islamabad Hotel
                         </p>
                       </div>
 
@@ -568,12 +568,12 @@ const BaraatCard = () => {
                       </div>
 
                       <p className="mt-4 font-ui text-[13px] leading-relaxed text-[#F8F1DE]/86">
-                        Plot 123, Diplomatic Enclave, Islamabad
+                         G-6 Markaz, Islamabad
                       </p>
 
                       <div className="mt-5 flex justify-center">
                         <motion.a
-                          href="#"
+                          href="https://maps.app.goo.gl/3UzAZJ19NFsTqpjV9"
                           target="_blank"
                           rel="noreferrer"
                           whileHover={{ y: -2, scale: 1.015 }}
