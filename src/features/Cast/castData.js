@@ -102,7 +102,7 @@ export const castData = [
   {
     name: "Waqas Tahir",
     role: "Brother of the Groom",
-    skill: "Placeholder Skill",
+    skill: "Chief of Wedding Logistics",
     side: "groom",
     isVIP: false,
     photo: "waqas.jpg",
@@ -110,7 +110,7 @@ export const castData = [
   {
     name: "Laiba Waqas",
     role: "Sister-in-law",
-    skill: "Placeholder Skill",
+    skill: "Detective of Candid Moments",
     side: "groom",
     isVIP: false,
     photo: "laiba.jpg",
@@ -126,7 +126,7 @@ export const castData = [
   {
     name: "Ayesha Tahir",
     role: "Sister of the Groom",
-    skill: "Placeholder Skill",
+    skill: "Shaadi Moments Ki Jasoos",
     side: "groom",
     isVIP: false,
     photo: "ayeshaT.jpg",
