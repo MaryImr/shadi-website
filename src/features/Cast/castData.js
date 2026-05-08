@@ -23,7 +23,7 @@ export const castData = [
     skill: "The Graceful Hostess",
     side: "groom",
     isVIP: true,
-    photo: "farhat.jpg",
+    photo: "farhat.JPG",
   },
   {
     name: "Tahir Mehmood",
