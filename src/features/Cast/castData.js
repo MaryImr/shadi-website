@@ -20,7 +20,7 @@ export const castData = [
   {
     name: "Farhat Tahir",
     role: "Mother of the Groom",
-    skill: "The Graceful Hostess",
+    skill: "Chief ‘khana khaya beta?' Officer",
     side: "groom",
     isVIP: true,
     photo: "farhat.JPG",
@@ -28,7 +28,7 @@ export const castData = [
   {
     name: "Tahir Mehmood",
     role: "Father of the Groom",
-    skill: "The Logistic Legend",
+    skill: "Head of ‘Bas time pe nikalna hai’ department",
     side: "groom",
     isVIP: true,
     photo: "tahir.jpg",
@@ -86,7 +86,7 @@ export const castData = [
   {
     name: "Ariha Tahir",
     role: "Sister of the Groom",
-    skill: "Placeholder Skill",
+    skill: "Director of Chaos & Couture",
     side: "groom",
     isVIP: false,
     photo: "ariha.jpg",
@@ -94,7 +94,7 @@ export const castData = [
   {
     name: "Aqib Sajjad",
     role: "Brother-in-law",
-    skill: "Placeholder Skill",
+    skill: "Head of Random Disappearances",
     side: "groom",
     isVIP: false,
     photo: "aqib.jpg",
