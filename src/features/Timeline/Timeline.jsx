@@ -17,7 +17,7 @@ const events = [
     episode: "Episode III",
     title: "The Walima",
     date: "August 3rd, 2026",
-    venue: "Placeholder Venue Name, Lahore",
+    venue: "Marabelle By Zafar Group, Lahore",
     time: "7:00 PM onwards",
     theme: "bg-shadi-emerald",
     accent: "text-shadi-gold"
