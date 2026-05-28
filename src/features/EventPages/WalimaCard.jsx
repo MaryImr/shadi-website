@@ -408,6 +408,19 @@ const WalimaCard = () => {
                         </div>
 
                         {/* center venue hero */}
+                        <div className="text-center md:text-right">
+                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#C7D0D0]/90">
+                            Time
+                          </p>
+                          <p className="mt-2 font-display text-[1.45rem] leading-none text-[#FFFFFF]">
+                            7:00 PM
+                          </p>
+                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#DDE5E5]/88">
+                            Onwards
+                          </p>
+                        </div>
+
+                        {/* right meta */}
                         <div className="relative text-center px-2">
                           <div className="absolute left-0 top-1/2 hidden h-px w-8 -translate-y-1/2 bg-gradient-to-r from-transparent to-[#DDE5E5]/45 md:block" />
                           <div className="absolute right-0 top-1/2 hidden h-px w-8 -translate-y-1/2 bg-gradient-to-l from-transparent to-[#DDE5E5]/45 md:block" />
@@ -420,19 +433,6 @@ const WalimaCard = () => {
                           </p>
                           <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#DDE5E5]/82">
                             Reception &amp; Dinner
-                          </p>
-                        </div>
-
-                        {/* right meta */}
-                        <div className="text-center md:text-right">
-                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#C7D0D0]/90">
-                            Time
-                          </p>
-                          <p className="mt-2 font-display text-[1.45rem] leading-none text-[#FFFFFF]">
-                            7:00 PM
-                          </p>
-                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#DDE5E5]/88">
-                            Onwards
                           </p>
                         </div>
                       </div>
@@ -459,7 +459,7 @@ const WalimaCard = () => {
                           className="group relative inline-flex w-full max-w-[240px] items-center justify-center overflow-hidden rounded-full border border-white/18 bg-[linear-gradient(135deg,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.10)_30%,rgba(221,229,229,0.18)_62%,rgba(255,255,255,0.08)_100%)] px-6 py-3.5 text-center font-ui text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#0A1F1F] shadow-[0_16px_38px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.30)] backdrop-blur-xl"
                         >
                           <span className="absolute inset-0 bg-[linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.40)_20%,transparent_38%)] opacity-80 transition-transform duration-700 group-hover:translate-x-full" />
-                          <span className="relative">Location</span>
+                          <span className="relative">Link to Location</span>
                         </motion.a>
                       </div>
                     </div>

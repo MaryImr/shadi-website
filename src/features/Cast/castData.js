@@ -53,7 +53,7 @@ export const castData = [
   {
     name: "Sarah Imran",
     role: "Sister of the Bride",
-    skill: "Placeholder Skill",
+    skill: "Director of 'Please Make This Look Good'",
     side: "bride",
     isVIP: false,
     photo: "sarah.jpg",
