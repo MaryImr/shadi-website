@@ -6,6 +6,7 @@ import Archives from './features/Archive/Archives';
 import Timeline from './features/Timeline/Timeline';
 import BaraatCard from './features/EventPages/BaraatCard';
 import WalimaCard from './features/EventPages/WalimaCard';
+import MemoryGallery from './features/MemoryGallery';
 
 function Home() {
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/baraat" element={<BaraatCard />} />
           <Route path="/walima" element={<WalimaCard />} />
+          <Route path="/memories" element={<MemoryGallery />} />
         </Routes>
       </main>
     </Router>

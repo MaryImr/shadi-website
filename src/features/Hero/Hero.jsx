@@ -90,7 +90,7 @@ const Hero = () => {
         transition={{ delay: 2.5 }}
         className="absolute bottom-8 flex flex-col items-center text-shadi-gold md:hidden"
       >
-        <p className="text-[10px] uppercase tracking-[0.2em] mb-2 font-bold">Scroll to Enter</p>
+        <p className="text-[10px] uppercase tracking-[0.2em] mb-2 font-bold text-center">Two souls, one journey,<br />and a lifetime of duas ahead</p>
         <motion.div 
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
