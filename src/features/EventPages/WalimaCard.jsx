@@ -416,7 +416,7 @@ const WalimaCard = () => {
                             Venue
                           </p>
                           <p className="mt-2 font-display text-[1.65rem] sm:text-[1.85rem] leading-tight text-[#FFFFFF] drop-shadow-[0_2px_14px_rgba(255,255,255,0.08)]">
-                            Moonlit Garden Marquee
+                            Marabelle
                           </p>
                           <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#DDE5E5]/82">
                             Reception &amp; Dinner
@@ -445,13 +445,13 @@ const WalimaCard = () => {
 
                       <div className="mt-4 text-center">
                         <p className="font-ui text-[13px] leading-relaxed text-[#F7F5F0]/84">
-                          123 Canal Side Avenue, Lahore
+                          Lahore Garrison Golf & Country Club, Saddar Town, Lahore
                         </p>
                       </div>
 
                       <div className="mt-6 flex justify-center">
                         <motion.a
-                          href="#"
+                          href="https://maps.app.goo.gl/9hEE47FKfztdhktR6"
                           target="_blank"
                           rel="noreferrer"
                           whileHover={{ y: -2, scale: 1.015 }}
