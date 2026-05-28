@@ -3,7 +3,7 @@ export const castData = [
   {
     name: "Ramooz Tahir",
     role: "The Groom",
-    skill: "The Hero / Infinite Sherwani Stamina",
+    skill: "The Hero of The Night",
     side: "groom",
     isVIP: true,
     photo: "ramooz.jpg",
@@ -11,7 +11,7 @@ export const castData = [
   {
     name: "Maryam Imran",
     role: "The Bride",
-    skill: "The Visionary / Negotiation Queen",
+    skill: "The Heroine of The Night",
     side: "bride",
     isVIP: true,
     photo: "maryam.jpg",
@@ -28,7 +28,7 @@ export const castData = [
   {
     name: "Tahir Mehmood",
     role: "Father of the Groom",
-    skill: "Head of ‘Bas time pe nikalna hai’ department",
+    skill: "Head of ‘Bas time pe nikalna hai’ Department",
     side: "groom",
     isVIP: true,
     photo: "tahir.jpg",
