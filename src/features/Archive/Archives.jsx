@@ -2,7 +2,14 @@ import { motion } from 'framer-motion';
 
 const archiveMoments = [
   // Engagement
-  { id: 1, title: "ODTU '23", event: "Once Upon A Time", url: new URL('../../assets/ArchiveAssets/engagement1.jpg', import.meta.url).href },
+  { 
+    id: 1, 
+    title: "ODTU '23 ->", 
+    event: "Once Upon A Time", 
+    url: new URL('../../assets/ArchiveAssets/engagement1.jpg', import.meta.url).href,
+    // --- ADDED LINK PROPERTY HERE ---
+    link: "/memories" 
+  },
   { id: 2, title: "The Ring", event: "Engagement", url: new URL('../../assets/ArchiveAssets/engagement2.jpeg', import.meta.url).href },
   { id: 3, title: "Sweet Beginnings", event: "Engagement", url: new URL('../../assets/ArchiveAssets/engagement3.jpeg', import.meta.url).href },
   // Nikkah
@@ -53,7 +60,7 @@ const Archives = () => {
               className="snap-center min-w-[280px] md:min-w-[350px] relative group"
             >
               {/* Image Container with Side-specific Border */}
-              <div className={`p-2 rounded-t-lg shadow-2xl border-t border-x border-shadi-gold/30 ${img.event === 'Engagement' ? 'bg-shadi-maroon' : 'bg-shadi-emerald'}`}>
+              <div className={`p-2 rounded-t-lg shadow-2xl border-t border-x border-shadi-gold/30 ${img.event === 'Engagement' || img.event === 'Once Upon A Time' ? 'bg-shadi-maroon' : 'bg-shadi-emerald'}`}>
                 <div className="aspect-[3/4] overflow-hidden relative rounded-sm">
                   <div className="absolute top-2 left-2 z-20 bg-shadi-gold text-shadi-maroon text-[8px] font-bold px-2 py-1 uppercase tracking-tighter shadow-md">
                     {img.event}
@@ -67,11 +74,23 @@ const Archives = () => {
                 </div>
               </div>
               
-              {/* The New Caption Box (No more solid yellow) */}
-              <div className={`py-4 px-2 border-x border-b border-shadi-gold/30 shadow-xl rounded-b-lg ${img.event === 'Engagement' ? 'bg-shadi-maroon' : 'bg-shadi-emerald'}`}>
-                <p className="font-serif text-lg text-shadi-gold text-center tracking-widest uppercase font-light leading-none">
-                  {img.title}
-                </p>
+              {/* Caption Box */}
+              <div className={`py-4 px-2 border-x border-b border-shadi-gold/30 shadow-xl rounded-b-lg ${img.event === 'Engagement' || img.event === 'Once Upon A Time' ? 'bg-shadi-maroon' : 'bg-shadi-emerald'}`}>
+                
+                {/* --- CONDITIONAL LINK RENDERING --- */}
+                {img.link ? (
+                  <a 
+                    href={img.link}
+                    className="font-serif text-lg text-shadi-gold text-center tracking-widest uppercase font-light leading-none block hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer pointer-events-auto"
+                  >
+                    {img.title}
+                  </a>
+                ) : (
+                  <p className="font-serif text-lg text-shadi-gold text-center tracking-widest uppercase font-light leading-none">
+                    {img.title}
+                  </p>
+                )}
+                
               </div>
             </motion.div>
           ))}
