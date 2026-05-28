@@ -585,7 +585,7 @@ const BaraatCard = () => {
                           }}
                         >
                           <span className="absolute inset-0 bg-[linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.35)_20%,transparent_38%)] opacity-70 transition-transform duration-700 group-hover:translate-x-full" />
-                          <span className="relative">Location</span>
+                          <span className="relative">Link to Location</span>
                         </motion.a>
                       </div>
                     </div>
