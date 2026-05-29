@@ -1,30 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Cleaned up data structure: just images and titles
+
 const MEMORIES_DATA = [
   {
     id: 1,
     title: "Where It All Began",
-    image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=600",
-    tilt: -3, // Slight left tilt
+    image: new URL('../assets/Memories/mem1.jpeg', import.meta.url).href,
+    tilt: -3,
   },
   {
     id: 2,
     title: "The First Roadtrip",
-    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600",
-    tilt: 2, // Slight right tilt
+    image: new URL('../assets/Memories/mem2.jpeg', import.meta.url).href,
+    tilt: 2,
   },
   {
     id: 3,
     title: "Unresolved Food Debates",
-    image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=600",
+    image: new URL('../assets/Memories/mem3.jpeg', import.meta.url).href,
     tilt: -2,
   },
   {
     id: 4,
     title: "Saying 'Yes' 💍",
-    image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=600",
+    image: new URL('../assets/Memories/mem4.jpeg', import.meta.url).href,
     tilt: 3,
   },
   {
