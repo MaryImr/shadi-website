@@ -2,8 +2,11 @@ import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import jaliPattern from '../../assets/jali.jpg';
-import processionMark from '../../assets/procession.png';
+import processionMark from '../../assets/boquet.png';
 import { guestData } from './guestData';
+
+import floralTopLeft from '../../assets/top-left.png';
+import floralBottomRight from '../../assets/bottom-right.png';
 
 const weightedEase = [0.76, 0, 0.24, 1];
 
@@ -302,11 +305,11 @@ const BaraatCard = () => {
   };
 
   return (
-    <section className="relative isolate min-h-[100dvh] overflow-hidden bg-[#3A0F14] text-[#F8F1DE]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#5A1820_0%,#3A0F14_32%,#2A0B0F_68%,#1E080B_100%)]" />
+    <section className="relative isolate min-h-[100dvh] overflow-hidden bg-[#FAF2F2] text-[#5B4545]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FFF8F8_0%,#FCEEEE_35%,#F8E6E6_70%,#F6E2E2_100%)]" />
 
       <div
-        className="absolute inset-0 opacity-[0.11] mix-blend-screen"
+        className="absolute inset-0 opacity-[0.05] mix-blend-screen"
         style={{
           backgroundImage: `
             radial-gradient(circle at 20% 20%, rgba(255,240,178,0.065), transparent 22%),
@@ -331,7 +334,7 @@ const BaraatCard = () => {
       />
 
       <div
-        className="absolute inset-0 opacity-[0.03] mix-blend-screen"
+        className="absolute inset-0 opacity-[0.012] mix-blend-screen"
         style={{
           backgroundImage: `url(${jaliPattern})`,
           backgroundRepeat: 'repeat',
@@ -342,8 +345,8 @@ const BaraatCard = () => {
 
       <WatermarkRosette />
 
-      <div className="absolute inset-x-0 top-0 h-48 bg-[radial-gradient(circle_at_top,rgba(236,205,114,0.16),transparent_70%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-[radial-gradient(circle_at_bottom,rgba(236,205,114,0.10),transparent_75%)]" />
+      <div className="absolute inset-x-0 top-0 h-48 bg-[radial-gradient(circle_at_top,rgba(236,196,206,0.18),transparent_72%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-[radial-gradient(circle_at_bottom,rgba(232,202,186,0.12),transparent_78%)]" />
 
       <motion.div
         variants={containerVars}
@@ -372,15 +375,15 @@ const BaraatCard = () => {
           <div className="relative w-full max-w-[760px]">
             <motion.div
               variants={itemVars}
-              className="pointer-events-none absolute inset-0 -z-10 scale-[1.03] rounded-t-[8rem] rounded-b-[2rem] border border-[#E4C461]/15"
+              className="pointer-events-none absolute inset-0 -z-10 scale-[1.03] rounded-[2rem] border border-[#E4C461]/15"
             />
 
             <motion.div
               variants={itemVars}
-              className="relative overflow-hidden rounded-t-[8rem] rounded-b-[2rem] border border-[#E2C35F]/30 bg-[linear-gradient(180deg,rgba(68,18,24,0.92)_0%,rgba(30,8,11,0.95)_100%)] shadow-[0_35px_80px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,241,198,0.14)] backdrop-blur-xl"
+              className="relative overflow-hidden rounded-[2rem] border border-[#D8BBB7]/50 bg-[linear-gradient(180deg,rgba(255,251,250,0.97)_0%,rgba(252,243,242,0.96)_100%)] shadow-[0_24px_60px_rgba(120,80,80,0.12),inset_0_1px_0_rgba(255,255,255,0.75)] backdrop-blur-xl"
             >
               <div
-                className="absolute inset-0 opacity-[0.02] mix-blend-screen pointer-events-none"
+                className="absolute inset-0 opacity-[0.008] mix-blend-multiply pointer-events-none"
                 style={{
                   backgroundImage: `url(${jaliPattern})`,
                   backgroundRepeat: 'repeat',
@@ -401,40 +404,75 @@ const BaraatCard = () => {
                 }}
               />
 
-              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,241,198,0.12),transparent_18%,transparent_60%,rgba(255,241,198,0.05)_78%,transparent_100%)]" />
-              <div className="absolute inset-[10px] rounded-t-[7.2rem] rounded-b-[1.6rem] border border-[#E2C35F]/15" />
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(248,223,223,0.16),transparent_22%,transparent_64%,rgba(240,214,214,0.08)_82%,transparent_100%)]" />
+              <div className="absolute inset-[10px] rounded-[1.6rem] border border-[#E5CFCB]/70" />
 
-              <motion.div
+              {/* <motion.div
                 variants={itemVars}
                 className="absolute left-1/2 top-4 z-20 -translate-x-1/2"
               >
                 <ArchCartouche />
-              </motion.div>
+              </motion.div> */}
 
-              <CornerFlourish className="absolute left-4 top-4 h-14 w-14 opacity-55" />
+              {/* <CornerFlourish className="absolute left-4 top-4 h-14 w-14 opacity-55" />
               <CornerFlourish className="absolute right-4 top-4 h-14 w-14 rotate-90 opacity-55" />
               <CornerFlourish className="absolute bottom-4 left-4 h-14 w-14 -rotate-90 opacity-55" />
-              <CornerFlourish className="absolute bottom-4 right-4 h-14 w-14 rotate-180 opacity-55" />
+              <CornerFlourish className="absolute bottom-4 right-4 h-14 w-14 rotate-180 opacity-55" /> */}
 
-              <div className="relative px-6 pb-8 pt-24 sm:px-10 sm:pb-10 sm:pt-28 md:px-14">
+              {/* Soft floral decorations */}
+              <img
+                src={floralTopLeft}
+                alt=""
+                aria-hidden="true"
+                className="
+                  pointer-events-none
+                  absolute
+                  left-0
+                  top-0
+                  z-[1]
+                  w-[250px]
+                  sm:w-[250px]
+                  opacity-90
+                  select-none
+                "
+              />
+
+              <img
+                src={floralBottomRight}
+                alt=""
+                aria-hidden="true"
+                className="
+                  pointer-events-none
+                  absolute
+                  bottom-0
+                  right-0
+                  z-[30]
+                  w-[250px]
+                  sm:w-[250px]
+                  opacity-90
+                  select-none
+                "
+              />
+
+              <div className="relative z-10 px-6 pb-8 pt-24 sm:px-10 sm:pb-10 sm:pt-28 md:px-14">
                 <motion.p
                   variants={itemVars}
-                  className="mb-4 sm:mb-5 text-center font-arabic text-[clamp(1.05rem,2.2vw,1.45rem)] leading-relaxed text-[#E7C86A]"
+                  className="mb-4 sm:mb-5 text-center font-arabic text-[clamp(1.05rem,2.2vw,1.45rem)] leading-relaxed text-[#B99163]"
                   dir="rtl"
                 >
                   بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
                 </motion.p>
 
-                <motion.div variants={itemVars} className="mb-4 flex justify-center">
+                {/* <motion.div variants={itemVars} className="mb-4 flex justify-center">
                   <ArchDivider />
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div variants={itemVars} className="mx-auto mb-3 max-w-[46rem] text-center">
                   <p className="sr-only">{inviteAnchor.full}</p>
 
                   {inviteAnchor.isPersonalized ? (
                     <>
-                      <p className="font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#FFF8EB]/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
+                      <p className="font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#5F4A46]/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
                         {inviteAnchor.lead}
                       </p>
 
@@ -443,23 +481,23 @@ const BaraatCard = () => {
                           <span className="font-cursive text-[clamp(1.9rem,4.8vw,3.05rem)] text-[#F0D98A] drop-shadow-[0_2px_14px_rgba(212,175,55,0.18)]">
                             {guestName}
                           </span>
-                          <span className="mt-1.5 block font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#FFF8EB]/88">
+                          <span className="mt-1.5 block font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#5F4A46]/88">
                             ’S PRESENCE
                           </span>
                         </p>
                       </div>
 
-                      <p className="mt-4 font-display text-[1.05rem] sm:text-[1.35rem] uppercase tracking-[0.22em] text-[#E7C86A]">
+                      <p className="mt-4 font-display text-[1.05rem] sm:text-[1.35rem] uppercase tracking-[0.22em] text-[#A97B5C]">
                         {inviteAnchor.tail}
                       </p>
                     </>
                   ) : (
                     <>
-                      <p className="mx-auto max-w-[36rem] font-ui text-[11px] sm:text-[13px] uppercase tracking-[0.3em] leading-[1.9] text-[#FFF8EB]/94 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
-                        MR. &amp; MRS. MUHAMMAD IMRAN REQUEST YOUR PRESENCE
+                      <p className="mx-auto max-w-[36rem] font-ui text-[11px] sm:text-[13px] uppercase tracking-[0.3em] leading-[1.9] text-[#5F4A46]/94 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
+                        MR. &amp; MRS. MUHAMMAD IMRAN<br/> REQUEST YOUR PRESENCE
                       </p>
 
-                      <p className="mt-4 font-display text-[1.05rem] sm:text-[1.35rem] uppercase tracking-[0.22em] text-[#E7C86A]">
+                      <p className="mt-4 font-display text-[1.05rem] sm:text-[1.35rem] uppercase tracking-[0.22em] text-[#A97B5C]">
                         AT THE BARAAT OF THEIR BELOVED DAUGHTER
                       </p>
                     </>
@@ -467,24 +505,24 @@ const BaraatCard = () => {
                 </motion.div>
 
                 <motion.div variants={itemVars} className="mb-7 mt-6 text-center">
-                  <h1 className="font-display text-[clamp(2rem,5.3vw,4.15rem)] font-bold uppercase leading-[0.92] tracking-[-0.03em] text-[#FBF4E4] drop-shadow-[0_8px_25px_rgba(0,0,0,0.35)]">
+                  <h1 className="font-display text-[clamp(2rem,5.3vw,4.15rem)] font-bold uppercase leading-[0.92] tracking-[-0.03em] text-[#6E4B4B] drop-shadow-[0_2px_6px_rgba(120,90,90,0.08)]">
                     Maryam Imran
                   </h1>
 
-                  <p className="my-2 font-cursive text-[1.85rem] text-[#E7C86A] sm:my-3 sm:text-[2.2rem]">
+                  <p className="my-2 font-cursive text-[1.85rem] text-[#B88484] sm:my-3 sm:text-[2.2rem]">
                     and
                   </p>
 
-                  <h1 className="font-display text-[clamp(2rem,5.3vw,4.15rem)] font-bold uppercase leading-[0.92] tracking-[-0.03em] text-[#FBF4E4] drop-shadow-[0_8px_25px_rgba(0,0,0,0.35)]">
+                  <h1 className="font-display text-[clamp(2rem,5.3vw,4.15rem)] font-bold uppercase leading-[0.92] tracking-[-0.03em] text-[#6E4B4B] drop-shadow-[0_2px_6px_rgba(120,90,90,0.08)]">
                     Ramooz Tahir
                   </h1>
                 </motion.div>
 
-                <motion.div variants={itemVars} className="mb-8 flex justify-center">
+                {/* <motion.div variants={itemVars} className="mb-8 flex justify-center">
                   <div className="rotate-180">
                     <ArchDivider />
                   </div>
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div variants={itemVars} className="mt-4">
                   <div className="relative overflow-hidden rounded-[2rem] border border-[#E2C35F]/24 bg-[linear-gradient(180deg,rgba(255,248,235,0.06)_0%,rgba(255,255,255,0.02)_24%,rgba(42,8,15,0.22)_100%)] px-5 py-5 shadow-[0_22px_60px_rgba(0,0,0,0.30),inset_0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-xl sm:px-7 sm:py-6">
@@ -509,9 +547,9 @@ const BaraatCard = () => {
                     <div className="pointer-events-none absolute inset-[1px] rounded-[calc(2rem-1px)] border border-[#E2C35F]/14" />
 
                     <div className="relative z-10 text-center">
-                      <div className="flex items-center justify-center gap-3 text-[#E7C86A]">
+                      <div className="flex items-center justify-center gap-3 text-[#A97B5C]">
                         <div className="h-px w-9 bg-gradient-to-r from-transparent to-[#D4AF37]/65 sm:w-12" />
-                        <p className="font-ui text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.34em] text-[#E7C86A]/92">
+                        <p className="font-ui text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.34em] text-[#A97B5C]/92">
                           Baraat &amp; Dinner
                         </p>
                         <div className="h-px w-9 bg-gradient-to-l from-transparent to-[#D4AF37]/65 sm:w-12" />
@@ -524,64 +562,65 @@ const BaraatCard = () => {
                             src={processionMark}
                             alt=""
                             aria-hidden="true"
-                            className="relative h-full w-full object-contain scale-[1.45] opacity-100 drop-shadow-[0_6px_20px_rgba(212,175,55,0.24)]"
+                            className="mx-auto mt-8 w-44 sm:w-52 opacity-75 contrast-90 saturate-75 select-none pointer-events-none"
                           />
                         </div>
                       </div>
 
-                      <div className="mt-4">
-                        <p className="font-display text-[1.65rem] sm:text-[1.95rem] leading-tight text-[#FFF8EB] drop-shadow-[0_2px_14px_rgba(0,0,0,0.22)]">
+                      <div className="mt-10">
+                        <p className="font-display text-[1.65rem] sm:text-[1.95rem] leading-tight text-[#5F4A46] drop-shadow-[0_2px_14px_rgba(0,0,0,0.22)]">
                           Islamabad Hotel
                         </p>
                       </div>
 
-                      <div className="mt-5 grid grid-cols-2 gap-3 sm:gap-4">
+                      <div className="mt-1 grid grid-cols-2 gap-3 sm:gap-4">
                         <div className="rounded-[1.15rem] border border-[#E2C35F]/18 bg-white/[0.03] px-3 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-                          <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.28em] text-[#E7C86A]/84">
+                          <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.28em] text-[#A97B5C]/84">
                             Date
                           </p>
-                          <p className="mt-2 font-display text-[1.15rem] sm:text-[1.3rem] leading-none text-[#FFF8EB]">
+                          <p className="mt-2 font-display text-[1.15rem] sm:text-[1.3rem] leading-none text-[#5F4A46]">
                             Saturday
                           </p>
-                          <p className="mt-2 font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.18em] text-[#F8F1DE]/84">
+                          <p className="mt-2 font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.18em] text-[#7A6662]">
                             01 August 2026
                           </p>
                         </div>
 
                         <div className="rounded-[1.15rem] border border-[#E2C35F]/18 bg-white/[0.03] px-3 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-                          <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.28em] text-[#E7C86A]/84">
+                          <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.28em] text-[#A97B5C]/84">
                             Time
                           </p>
-                          <p className="mt-2 font-display text-[1.15rem] sm:text-[1.3rem] leading-none text-[#FFF8EB]">
+                          <p className="mt-2 font-display text-[1.15rem] sm:text-[1.3rem] leading-none text-[#5F4A46]">
                             7:00 PM
                           </p>
-                          <p className="mt-2 font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.18em] text-[#F8F1DE]/84">
+                          <p className="mt-2 font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.18em] text-[#7A6662]">
                             Onwards
                           </p>
                         </div>
                       </div>
 
-                      <div className="mt-4 flex items-center justify-center gap-3 text-[#E7C86A]">
-                        <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#D4AF37]/42" />
-                        <div className="h-[6px] w-[6px] rounded-full bg-[#E7C86A]/70" />
-                        <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#D4AF37]/42" />
+                      <div className="flex items-center justify-center">
+                        <div className="h-px w-12 bg-[#DDBEBB]" />
+                        <div className="mx-3 text-[#C7A6A3] text-lg">❀</div>
+                        <div className="h-px w-12 bg-[#DDBEBB]" />
                       </div>
 
-                      <p className="mt-4 font-ui text-[13px] leading-relaxed text-[#F8F1DE]/86">
+                      <p className="mt-4 font-ui text-[13px] leading-relaxed text-[#7A6662]">
                          G-6 Markaz, Islamabad
                       </p>
 
-                      <div className="mt-5 flex justify-center">
+                      <div className="my-5 flex justify-center">
                         <motion.a
                           href="https://maps.app.goo.gl/3UzAZJ19NFsTqpjV9"
                           target="_blank"
                           rel="noreferrer"
                           whileHover={{ y: -2, scale: 1.015 }}
                           whileTap={{ scale: 0.985 }}
-                          className="group relative inline-flex w-full max-w-[235px] items-center justify-center overflow-hidden rounded-full px-6 py-3.5 text-center font-ui text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#2A082F] shadow-[0_16px_40px_rgba(0,0,0,0.35),inset_0_2px_8px_rgba(255,255,255,0.35)]"
+                          className="inline-flex items-center justify-center gap-2 rounded-full border border-[#DDBEBB] bg-[#FDF6F5] px-5 py-2.5 text-sm font-medium text-[#7A5A57] shadow-[0_2px_8px_rgba(120,90,90,0.08)] transition-all duration-200 hover:bg-[#F8ECEB] hover:border-[#CFA5A1] hover:shadow-[0_4px_12px_rgba(120,90,90,0.12)]
+"
                           style={{
                             background:
-                              'linear-gradient(135deg, #8a6319 0%, #d4af37 22%, #fff0af 50%, #c99c2d 70%, #7c5615 100%)',
+                              'linear-gradient(135deg, #f7e8e8 0%, #efd8d8 45%, #e7caca 100%)',
                           }}
                         >
                           <span className="absolute inset-0 bg-[linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.35)_20%,transparent_38%)] opacity-70 transition-transform duration-700 group-hover:translate-x-full" />
@@ -591,35 +630,6 @@ const BaraatCard = () => {
                     </div>
                   </div>
                 </motion.div>
-
-                {/* <motion.div
-                  variants={itemVars}
-                  className="mt-7 flex flex-col items-center gap-4"
-                >
-                  <div className="flex items-center gap-3 text-[#E7C86A]">
-                    <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#D4AF37]/70" />
-                    <p className="font-ui text-[10px] font-semibold uppercase tracking-[0.42em] text-[#E7C86A]/90">
-                      Baraat &amp; Dinner
-                    </p>
-                    <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#D4AF37]/70" />
-                  </div>
-
-                  <motion.a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
-                    whileHover={{ y: -2, scale: 1.015 }}
-                    whileTap={{ scale: 0.985 }}
-                    className="group relative inline-flex w-full max-w-[240px] sm:max-w-[260px] items-center justify-center overflow-hidden rounded-full px-6 py-3.5 text-center font-ui text-[10px] font-extrabold uppercase tracking-[0.28em] text-[#2A082F] shadow-[0_16px_40px_rgba(0,0,0,0.35),inset_0_2px_8px_rgba(255,255,255,0.35)]"
-                    style={{
-                      background:
-                        'linear-gradient(135deg, #8a6319 0%, #d4af37 22%, #fff0af 50%, #c99c2d 70%, #7c5615 100%)',
-                    }}
-                  >
-                    <span className="absolute inset-0 bg-[linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.35)_20%,transparent_38%)] opacity-70 transition-transform duration-700 group-hover:translate-x-full" />
-                    <span className="relative">Location</span>
-                  </motion.a>
-                </motion.div> */}
               </div>
             </motion.div>
           </div>
