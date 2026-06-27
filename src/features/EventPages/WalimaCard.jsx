@@ -37,7 +37,7 @@ function PearlDivider() {
       <defs>
         <linearGradient id="silverLine" x1="0" x2="1">
           <stop offset="0%" stopColor="#7F8C8D" />
-          <stop offset="35%" stopColor="#DDE5E5" />
+          <stop offset="35%" stopColor="#DDD2F1" />
           <stop offset="50%" stopColor="#FFFFFF" />
           <stop offset="70%" stopColor="#C7D0D0" />
           <stop offset="100%" stopColor="#7F8C8D" />
@@ -151,12 +151,13 @@ const WalimaCard = () => {
   }, []);
 
   return (
-    <section className="relative isolate min-h-[100dvh] overflow-hidden bg-[#eef4ea] text-[#31483b]">
+    <section className="relative isolate min-h-[100dvh] overflow-hidden bg-[#F4F0FA] text-[#44365E]">
       {/* base moonlit gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#fdfdf8_0%,#edf5eb_38%,#e5efe3_72%,#dde8db_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FEFCFF_0%,#F5F0FA_36%,#EEE7F7_70%,#E7DEF4_100%)]" />
       <div
-        className="pointer-events-none absolute inset-0 z-[2] opacity-[0.32]"
+        className="pointer-events-none absolute inset-0 z-[2] mix-blend-multiply"
         style={{
+          filter: 'hue-rotate(265deg) saturate(0.85)',
           backgroundImage: `url(${backdropPattern})`,
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center top',
@@ -203,8 +204,8 @@ const WalimaCard = () => {
 
       {/* <MoonHalo /> */}
 
-      <div className="absolute inset-x-0 top-0 h-56 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.55),transparent_72%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-44 bg-[radial-gradient(circle_at_bottom,rgba(198,215,194,0.28),transparent_75%)]" />
+      <div className="absolute inset-x-0 top-0 h-56 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.22),transparent_72%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-44 bg-[radial-gradient(circle_at_bottom,rgba(171,147,219,0.22),transparent_75%)]" />
 
       <motion.div
         variants={containerVars}
@@ -235,13 +236,13 @@ const WalimaCard = () => {
             {/* outer glow frame */}
             <motion.div
               variants={itemVars}
-              className="pointer-events-none absolute inset-0 -z-10 scale-[1.025] rounded-[2rem] border border-[#c7d8c6]"
+              className="pointer-events-none absolute inset-0 -z-10 scale-[1.025] rounded-[2rem] border border-[#D6CBEA]"
             />
 
             {/* main insert */}
             <motion.div
               variants={itemVars}
-              className="relative overflow-hidden rounded-[2rem] border border-[#d7e5d5] bg-transparent shadow-[0_20px_55px_rgba(76,96,74,0.10)]"
+              className="relative overflow-hidden rounded-[2rem] border border-[#DDD3F0] bg-transparent shadow-[0_20px_55px_rgba(76,96,74,0.10)]"
             >
               {/* floral watermark inside card */}
               <div
@@ -255,9 +256,8 @@ const WalimaCard = () => {
               />
 
               {/* frosted pearl wash */}
-              {/* <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.55)_0%,rgba(255,255,255,0.2)_40%,rgba(255,255,255,0.08)_100%)]" /> */}
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_42%),radial-gradient(circle_at_bottom,rgba(255,255,255,0.10),transparent_44%)]" />
-              <div className="pointer-events-none absolute inset-[10px] rounded-[calc(2rem-10px)] border border-[#dce7d7]" />
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%),radial-gradient(circle_at_bottom,rgba(255,255,255,0.04),transparent_44%)]" />
+              <div className="pointer-events-none absolute inset-[10px] rounded-[calc(2rem-10px)] border border-[#E4DCF4]" />
 
               {/* top crest */}
               <motion.div variants={itemVars} className="absolute left-1/2 top-4 z-20 -translate-x-1/2">
@@ -274,7 +274,7 @@ const WalimaCard = () => {
                 className="pointer-events-none absolute inset-10 rounded-[2rem]"
                 style={{
                   background:
-                    "radial-gradient(circle, rgba(255,251,245,0.42) 0%, rgba(255,251,245,0.18) 55%, transparent 90%)",
+                    "radial-gradient(circle, rgba(255,252,255,0.44) 0%, rgba(244,238,251,0.18) 55%, transparent 90%)",
                 }}
               />
 
@@ -289,13 +289,13 @@ const WalimaCard = () => {
 
                     {inviteAnchor.isPersonalized ? (
                         <>
-                        <p className="font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#233326]/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
+                        <p className="font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#49356E]/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
                             {inviteAnchor.lead}
                         </p>
 
                         <div className="mt-2.5">
                             <p className="mx-auto max-w-[18ch] leading-[1]">
-                            <span className="font-display text-[clamp(1.95rem,4.8vw,3.1rem)] italic text-[#233326] drop-shadow-[0_2px_18px_rgba(255,255,255,0.12)]">
+                            <span className="font-display text-[clamp(1.95rem,4.8vw,3.1rem)] italic text-[#49356E] drop-shadow-[0_2px_18px_rgba(255,255,255,0.12)]">
                                 {guestName}
                             </span>
                             <span className="mt-1.5 block font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#DCE4E4]/90">
@@ -305,27 +305,27 @@ const WalimaCard = () => {
                         </div>
                         </>
                     ) : (
-                        <p className="mx-auto max-w-[34rem] font-ui text-[11px] sm:text-[13px] uppercase tracking-[0.3em] leading-[1.9] text-[#233326]/94 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
+                        <p className="mx-auto max-w-[34rem] font-ui text-[11px] sm:text-[13px] uppercase tracking-[0.3em] leading-[1.9] text-[#49356E]/94 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
                         MR. &amp; MRS. TAHIR REQUEST THE PLEASURE OF YOUR COMPANY
                         </p>
                     )}
                 </motion.div>
 
                 <motion.div variants={itemVars} className="mt-5 text-center">
-                    <p className="font-display text-[1.15rem] italic tracking-[0.08em] text-[#486252] drop-shadow-[0_2px_14px_rgba(255,255,255,0.08)] sm:text-[1.35rem]">
+                    <p className="font-display text-[1.15rem] italic tracking-[0.08em] text-[#69518F] drop-shadow-[0_2px_14px_rgba(255,255,255,0.08)] sm:text-[1.35rem]">
                         To celebrate the Walima of their Beloved Son
                     </p>
 
                     <div className="mt-5">
-                        <h1 className="font-display text-[clamp(2.1rem,5.2vw,4.3rem)] font-semibold uppercase leading-[0.94] tracking-[-0.03em] text-[#1d2b21] drop-shadow-[0_2px_6px_rgba(255,255,255,0.35)]">
+                        <h1 className="font-display text-[clamp(2.1rem,5.2vw,4.3rem)] font-semibold uppercase leading-[0.94] tracking-[-0.03em] text-[#37234F] drop-shadow-[0_2px_6px_rgba(255,255,255,0.35)]">
                         Ramooz Tahir
                         </h1>
 
-                        <p className="my-2 font-cursive text-[1.75rem] text-[#536a59] sm:my-3 sm:text-[2rem]">
+                        <p className="my-2 font-cursive text-[1.75rem] text-[#7A669F] sm:my-3 sm:text-[2rem]">
                         and
                         </p>
 
-                        <h1 className="font-display text-[clamp(2.1rem,5.2vw,4.3rem)] font-semibold uppercase leading-[0.94] tracking-[-0.03em] text-[#1d2b21] drop-shadow-[0_2px_6px_rgba(255,255,255,0.35)]">
+                        <h1 className="font-display text-[clamp(2.1rem,5.2vw,4.3rem)] font-semibold uppercase leading-[0.94] tracking-[-0.03em] text-[#37234F] drop-shadow-[0_2px_6px_rgba(255,255,255,0.35)]">
                         Maryam Imran
                         </h1>
                     </div>
@@ -334,12 +334,12 @@ const WalimaCard = () => {
                 {/* distinctly different event plaque */}
                 <motion.div variants={itemVars} className="mt-8">
                   <div className="text-center">
-                    <p className="font-ui text-[10px] sm:text-[11px] uppercase tracking-[0.34em] text-[#536a59]/84">
+                    <p className="font-ui text-[10px] sm:text-[11px] uppercase tracking-[0.34em] text-[#7A669F]/84">
                       An Evening in Lahore
                     </p>
                   </div>
 
-                  <div className="relative mt-4 overflow-hidden rounded-[1.9rem] border border-[#d7e5d5] bg-[rgba(255,255,250,0.18)] backdrop-blur-sm px-5 py-6 shadow-[0_12px_32px_rgba(81,103,78,0.10)] backdrop-blur-2xl sm:px-6 sm:py-6">
+                  <div className="relative mt-4 overflow-hidden rounded-[1.9rem] border border-[#d7e5d5] bg-[rgba(250,247,255,0.24)] backdrop-blur-sm px-5 py-6 shadow-[0_12px_32px_rgba(74,58,112,0.10)] sm:px-6 sm:py-6">
                     {/* engraved silver wash */}
                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.17)_0%,rgba(255,255,255,0.07)_24%,rgba(255,255,255,0.025)_54%,rgba(255,255,255,0.09)_82%,rgba(255,255,255,0.15)_100%)]" />
 
@@ -361,66 +361,66 @@ const WalimaCard = () => {
                     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_42%),radial-gradient(circle_at_bottom,rgba(255,255,255,0.08),transparent_46%)]" />
 
                     <div className="relative z-10">
-                      <div className="mb-5 flex items-center justify-center gap-3 text-[#536a59]">
-                        <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#DDE5E5]/65" />
-                        <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.3em] text-[#233326]/92">
+                      <div className="mb-5 flex items-center justify-center gap-3 text-[#7A669F]">
+                        <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#DDD2F1]/65" />
+                        <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.3em] text-[#49356E]/92">
                           Reception Details
                         </p>
-                        <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#DDE5E5]/65" />
+                        <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#DDD2F1]/65" />
                       </div>
 
                       <div className="grid gap-5 md:grid-cols-[1fr_1.25fr_1fr] md:items-center">
                         {/* left meta */}
                         <div className="text-center md:text-left">
-                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#80907F]">
+                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#9888B8]">
                             Date
                           </p>
-                          <p className="mt-2 font-display text-[1.45rem] leading-none text-[#2E4738]">
+                          <p className="mt-2 font-display text-[1.45rem] leading-none text-[#56437C]">
                             Monday
                           </p>
-                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#536a59]/88">
+                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#7A669F]/88">
                             03 August 2026
                           </p>
                         </div>
 
                         {/* center venue hero */}
                         <div className="text-center md:text-right">
-                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#80907F]">
+                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#9888B8]">
                             Time
                           </p>
-                          <p className="mt-2 font-display text-[1.45rem] leading-none text-[#2E4738]">
+                          <p className="mt-2 font-display text-[1.45rem] leading-none text-[#56437C]">
                             7:00 PM
                           </p>
-                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#536a59]/88">
+                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#7A669F]/88">
                             Onwards
                           </p>
                         </div>
 
                         {/* right meta */}
                         <div className="relative text-center px-2">
-                          <div className="absolute left-0 top-1/2 hidden h-px w-8 -translate-y-1/2 bg-gradient-to-r from-transparent to-[#DDE5E5]/45 md:block" />
-                          <div className="absolute right-0 top-1/2 hidden h-px w-8 -translate-y-1/2 bg-gradient-to-l from-transparent to-[#DDE5E5]/45 md:block" />
+                          <div className="absolute left-0 top-1/2 hidden h-px w-8 -translate-y-1/2 bg-gradient-to-r from-transparent to-[#DDD2F1]/45 md:block" />
+                          <div className="absolute right-0 top-1/2 hidden h-px w-8 -translate-y-1/2 bg-gradient-to-l from-transparent to-[#DDD2F1]/45 md:block" />
 
-                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#80907F]">
+                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#9888B8]">
                             Venue
                           </p>
-                          <p className="mt-2 font-display text-[1.65rem] sm:text-[1.85rem] leading-tight text-[#2E4738] drop-shadow-[0_2px_14px_rgba(255,255,255,0.08)]">
+                          <p className="mt-2 font-display text-[1.65rem] sm:text-[1.85rem] leading-tight text-[#56437C] drop-shadow-[0_2px_14px_rgba(255,255,255,0.08)]">
                             Marabelle
                           </p>
-                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#536a59]/82">
+                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#7A669F]/82">
                             Reception &amp; Dinner
                           </p>
                         </div>
                       </div>
 
-                      <div className="mt-5 flex items-center justify-center gap-3 text-[#536a59]">
-                        <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#DDE5E5]/45" />
+                      <div className="mt-5 flex items-center justify-center gap-3 text-[#7A669F]">
+                        <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#DDD2F1]/45" />
                         <div className="h-[6px] w-[6px] rounded-full bg-[#F7F5F0]/80" />
-                        <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#DDE5E5]/45" />
+                        <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#DDD2F1]/45" />
                       </div>
 
                       <div className="mt-4 text-center">
-                        <p className="font-ui text-[13px] leading-relaxed text-[#233326]/84">
+                        <p className="font-ui text-[13px] leading-relaxed text-[#49356E]/84">
                           Lahore Garrison Golf & Country Club, Saddar Town, Lahore
                         </p>
                       </div>
@@ -432,7 +432,7 @@ const WalimaCard = () => {
                           rel="noreferrer"
                           whileHover={{ y: -2, scale: 1.015 }}
                           whileTap={{ scale: 0.985 }}
-                          className="group relative inline-flex w-full max-w-[240px] items-center justify-center overflow-hidden rounded-full border border-[#b9ccb8] bg-[#eef5eb] px-6 py-3.5 text-center font-ui text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#26352b] shadow-[0_8px_24px_rgba(81,103,78,0.10)]"
+                          className="group relative inline-flex w-full max-w-[240px] items-center justify-center overflow-hidden rounded-full border border-[#D2C7E7] bg-[#F8F5FC] px-6 py-3.5 text-center font-ui text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#49356E] shadow-[0_8px_24px_rgba(78,61,118,0.10)]"
                         >
                           <span className="absolute inset-0 bg-[linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.40)_20%,transparent_38%)] opacity-80 transition-transform duration-700 group-hover:translate-x-full" />
                           <span className="relative">Link to Location</span>
@@ -464,7 +464,7 @@ const WalimaCard = () => {
             }}
           >
             {/* veil body */}
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,250,0.95)_0%,rgba(242,248,239,0.88)_40%,rgba(233,242,231,0.82)_100%)] backdrop-blur-md" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,253,255,0.96)_0%,rgba(246,240,252,0.90)_42%,rgba(236,229,248,0.84)_100%)] backdrop-blur-md" />
 
             {/* floral veil texture */}
             <div
@@ -500,18 +500,18 @@ const WalimaCard = () => {
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.22),transparent_30%,transparent_70%,rgba(255,255,255,0.08))]" />
                 <div className="pointer-events-none absolute inset-[1px] rounded-[calc(1.75rem-1px)] border border-white/12" />
 
-                <div className="relative overflow-hidden rounded-[1.75rem] border border-[#d6e2d4] bg-[#fffefb] px-8 py-6 shadow-[0_14px_36px_rgba(81,103,78,0.12)]">
-                  <p className="font-cursive text-[2.1rem] leading-none text-[#45614d] sm:text-[2.45rem]">
+                <div className="relative overflow-hidden rounded-[1.75rem] border border-[#DDD4EE] bg-[#FCFAFF] px-8 py-6 shadow-[0_14px_36px_rgba(72,56,109,0.12)]">
+                  <p className="font-cursive text-[2.1rem] leading-none text-[#62458A] sm:text-[2.45rem]">
                     Lift the Veil
                   </p>
 
                   <div className="mx-auto mt-3 flex items-center justify-center gap-3">
-                    <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#90A6A6]/70" />
+                    <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#B4A3D6]/70" />
                     <div className="h-[7px] w-[7px] rounded-full bg-[#F7F5F0] shadow-[0_0_14px_rgba(255,255,255,0.40)]" />
-                    <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#90A6A6]/70" />
+                    <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#B4A3D6]/70" />
                   </div>
 
-                  <p className="mt-4 font-ui text-[10px] font-semibold uppercase tracking-[0.46em] text-[#274949]/72">
+                  <p className="mt-4 font-ui text-[10px] font-semibold uppercase tracking-[0.46em] text-[#5A4380]/72">
                     Tap to Reveal
                   </p>
                 </div>
