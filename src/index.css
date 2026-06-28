@@ -66,3 +66,114 @@ html.route-walima,
 body.route-walima {
   background-color: #0d2b2b;
 }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0%,100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes floatSlowReverse {
+  0%,100% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+@keyframes glowPulse {
+  0%,100% {
+    opacity:.45;
+    transform:scale(1.05);
+  }
+  50% {
+    opacity:.7;
+    transform:scale(1.12);
+  }
+}
+
+@keyframes heartBeatSoft {
+  0%,100% {
+    transform:scale(1);
+  }
+  8% {
+    transform:scale(1.08);
+  }
+  16% {
+    transform:scale(1);
+  }
+}
+
+@keyframes shimmerText {
+  0%,100% {
+    opacity:1;
+  }
+  50% {
+    opacity:.88;
+  }
+}
+
+@keyframes arrowFloat {
+  0%,100% {
+    transform:translateX(0);
+  }
+  50% {
+    transform:translateX(4px);
+  }
+}
+
+@keyframes shadowPulse {
+  0%,100% {
+    box-shadow:0 10px 30px rgba(90,61,49,.08);
+  }
+  50% {
+    box-shadow:0 14px 34px rgba(90,61,49,.14);
+  }
+}
+
+.animate-fade-up{
+  animation:fadeUp .9s ease-out both;
+}
+
+.animate-float{
+  animation:floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse{
+  animation:floatSlowReverse 7s ease-in-out infinite;
+}
+
+.animate-glow{
+  animation:glowPulse 6s ease-in-out infinite;
+}
+
+.animate-heart{
+  animation:heartBeatSoft 3.2s ease-in-out infinite;
+}
+
+.animate-shimmer{
+  animation:shimmerText 5s ease-in-out infinite;
+}
+
+.animate-arrow{
+  animation:arrowFloat 2.8s ease-in-out infinite;
+}
+
+.animate-button{
+  animation:shadowPulse 5s ease-in-out infinite;
+}
