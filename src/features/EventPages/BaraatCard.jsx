@@ -419,9 +419,12 @@ const BaraatCard = () => {
                         </div>
                       </div>
 
-                      <div className="mt-10">
-                        <p className="font-display text-[1.65rem] sm:text-[1.95rem] leading-tight text-[#5F4A46] drop-shadow-[0_2px_14px_rgba(0,0,0,0.22)]">
-                          Islamabad Hotel
+                      <div className="mt-10 text-center">
+                        <p className="font-ui text-[15px] sm:text-[12px] tracking-[0.28em] text-[#8C746F]">
+                          Sheesh Mehal
+                        </p>
+                        <p className="my-2 font-display text-[1.05rem] sm:text-[2.05rem] uppercase leading-none text-[#A97B5C] drop-shadow-[0_2px_14px_rgba(0,0,0,0.22)]">
+                          @ Islamabad Hotel
                         </p>
                       </div>
 
