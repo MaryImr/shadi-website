@@ -3,7 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import floralPattern from '../../assets/floral.jpg';
 import engravingPattern from '../../assets/engraving.png';
-import backdropPattern from '../../assets/backdrop.png';
+import backdropTop from '../../assets/backdropTop.png';
+import backdropBottom from '../../assets/backdropBottom.png';
 import { guestData } from './guestData';
 
 const veilEase = [0.19, 1, 0.22, 1];
@@ -151,19 +152,26 @@ const WalimaCard = () => {
   }, []);
 
   return (
-    <section className="relative isolate min-h-[100dvh] overflow-hidden bg-[#F4F0FA] text-[#44365E]">
-      {/* base moonlit gradient */}
+    <section className="relative isolate min-h-[100dvh] overflow-hidden bg-[#F4F0FA] text-[#2D1849]">
+
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FEFCFF_0%,#F5F0FA_36%,#EEE7F7_70%,#E7DEF4_100%)]" />
-      <div
-        className="pointer-events-none absolute inset-0 z-[2] mix-blend-multiply"
-        style={{
-          filter: 'hue-rotate(265deg) saturate(0.85)',
-          backgroundImage: `url(${backdropPattern})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center top',
-          backgroundSize: 'min(1100px,155%) 100%',
-        }}
-      />
+
+      {/* Backdrop */}
+      <div className="pointer-events-none absolute inset-0 z-[2] overflow-hidden">
+        {/* Top */}
+        <div
+          className="absolute top-0 left-0 right-0"
+          style={{
+            height: "340px", // adjust to match your artwork
+            backgroundImage: `url(${backdropTop})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center top",
+            backgroundSize: "min(1100px,100%) auto",
+            filter: "none",
+            mixBlendMode: "normal",
+          }}
+        />
+      </div>
 
       {/* airy botanical texture */}
       <div
@@ -233,17 +241,30 @@ const WalimaCard = () => {
           className="mx-auto flex min-h-[calc(100dvh-2rem)] max-w-5xl items-center justify-center"
         >
           <div className="relative w-full max-w-[760px]">
-            {/* outer glow frame */}
-            <motion.div
-              variants={itemVars}
-              className="pointer-events-none absolute inset-0 -z-10 scale-[1.025] rounded-[2rem] border border-[#D6CBEA]"
-            />
 
             {/* main insert */}
             <motion.div
               variants={itemVars}
-              className="relative overflow-hidden rounded-[2rem] border border-[#DDD3F0] bg-transparent shadow-[0_20px_55px_rgba(76,96,74,0.10)]"
+              className="relative overflow-hidden rounded-[2rem] bg-transparent shadow-[0_20px_55px_rgba(76,96,74,0.10)]"
             >
+
+            {/* Royal side trims */}
+            <div
+              className="pointer-events-none absolute left-[18px] top-[42px] bottom-[42px] z-[25] w-[2px] rounded-full"
+              style={{
+                background:
+                   "linear-gradient(to bottom, rgba(90,62,140,0) 0%, rgba(90,62,140,0.08) 10%, rgba(90,62,140,0.30) 22%, rgba(106,71,152,0.70) 38%, #8D69BF 50%, rgba(106,71,152,0.70) 62%, rgba(90,62,140,0.30) 78%, rgba(90,62,140,0.08) 90%, rgba(90,62,140,0) 100%)",
+              }}
+            />
+
+            <div
+              className="pointer-events-none absolute right-[18px] top-[42px] bottom-[42px] z-[25] w-[2px] rounded-full"
+              style={{
+                background:
+                  "linear-gradient(to bottom, rgba(90,62,140,0) 0%, rgba(90,62,140,0.08) 10%, rgba(90,62,140,0.30) 22%, rgba(106,71,152,0.70) 38%, #8D69BF 50%, rgba(106,71,152,0.70) 62%, rgba(90,62,140,0.30) 78%, rgba(90,62,140,0.08) 90%, rgba(90,62,140,0) 100%)",
+              }}
+            />
+
               {/* floral watermark inside card */}
               <div
                 className="pointer-events-none absolute inset-0 opacity-[0.035] mix-blend-screen"
@@ -257,7 +278,6 @@ const WalimaCard = () => {
 
               {/* frosted pearl wash */}
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%),radial-gradient(circle_at_bottom,rgba(255,255,255,0.04),transparent_44%)]" />
-              <div className="pointer-events-none absolute inset-[10px] rounded-[calc(2rem-10px)] border border-[#E4DCF4]" />
 
               {/* top crest */}
               <motion.div variants={itemVars} className="absolute left-1/2 top-4 z-20 -translate-x-1/2">
@@ -278,7 +298,7 @@ const WalimaCard = () => {
                 }}
               />
 
-              <div className="relative px-6 pb-8 pt-24 sm:px-10 sm:pb-10 sm:pt-28 md:px-14">
+              <div className="relative px-6 pb-18 pt-24 sm:px-10 sm:pb-24 sm:pt-28 md:px-14">
                 <motion.div variants={itemVars} className="mb-4 mt-0.5 flex justify-center">
                     <PearlDivider />
                 </motion.div>
@@ -289,13 +309,13 @@ const WalimaCard = () => {
 
                     {inviteAnchor.isPersonalized ? (
                         <>
-                        <p className="font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#49356E]/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
+                        <p className="font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#2D1849]/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
                             {inviteAnchor.lead}
                         </p>
 
                         <div className="mt-2.5">
                             <p className="mx-auto max-w-[18ch] leading-[1]">
-                            <span className="font-display text-[clamp(1.95rem,4.8vw,3.1rem)] italic text-[#49356E] drop-shadow-[0_2px_18px_rgba(255,255,255,0.12)]">
+                            <span className="font-display text-[clamp(1.95rem,4.8vw,3.1rem)] italic text-[#2D1849] drop-shadow-[0_2px_18px_rgba(255,255,255,0.12)]">
                                 {guestName}
                             </span>
                             <span className="mt-1.5 block font-ui text-[11px] sm:text-[12px] uppercase tracking-[0.34em] text-[#DCE4E4]/90">
@@ -305,7 +325,7 @@ const WalimaCard = () => {
                         </div>
                         </>
                     ) : (
-                        <p className="mx-auto max-w-[34rem] font-ui text-[11px] sm:text-[13px] uppercase tracking-[0.3em] leading-[1.9] text-[#49356E]/94 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
+                        <p className="mx-auto max-w-[34rem] font-ui text-[11px] sm:text-[13px] uppercase tracking-[0.3em] leading-[1.9] text-[#2D1849]/94 drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)]">
                         MR. &amp; MRS. TAHIR REQUEST THE PLEASURE OF YOUR COMPANY
                         </p>
                     )}
@@ -321,7 +341,7 @@ const WalimaCard = () => {
                         Ramooz Tahir
                         </h1>
 
-                        <p className="my-2 font-cursive text-[1.75rem] text-[#7A669F] sm:my-3 sm:text-[2rem]">
+                        <p className="my-2 font-cursive text-[1.75rem] text-[#5A3D87] sm:my-3 sm:text-[2rem]">
                         and
                         </p>
 
@@ -334,7 +354,7 @@ const WalimaCard = () => {
                 {/* distinctly different event plaque */}
                 <motion.div variants={itemVars} className="mt-8">
                   <div className="text-center">
-                    <p className="font-ui text-[10px] sm:text-[11px] uppercase tracking-[0.34em] text-[#7A669F]/84">
+                    <p className="font-ui text-[10px] sm:text-[11px] uppercase tracking-[0.34em] text-[#5A3D87]/84">
                       An Evening in Lahore
                     </p>
                   </div>
@@ -361,9 +381,9 @@ const WalimaCard = () => {
                     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_42%),radial-gradient(circle_at_bottom,rgba(255,255,255,0.08),transparent_46%)]" />
 
                     <div className="relative z-10">
-                      <div className="mb-5 flex items-center justify-center gap-3 text-[#7A669F]">
+                      <div className="mb-5 flex items-center justify-center gap-3 text-[#5A3D87]">
                         <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#DDD2F1]/65" />
-                        <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.3em] text-[#49356E]/92">
+                        <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.3em] text-[#2D1849]/92">
                           Reception Details
                         </p>
                         <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#DDD2F1]/65" />
@@ -372,26 +392,26 @@ const WalimaCard = () => {
                       <div className="grid gap-5 md:grid-cols-[1fr_1.25fr_1fr] md:items-center">
                         {/* left meta */}
                         <div className="text-center md:text-left">
-                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#9888B8]">
+                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#6A518E]">
                             Date
                           </p>
-                          <p className="mt-2 font-display text-[1.45rem] leading-none text-[#56437C]">
+                          <p className="mt-2 font-display text-[1.45rem] leading-none text-[#3B235C]">
                             Monday
                           </p>
-                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#7A669F]/88">
+                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#5A3D87]/88">
                             03 August 2026
                           </p>
                         </div>
 
                         {/* center venue hero */}
                         <div className="text-center md:text-right">
-                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#9888B8]">
+                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#6A518E]">
                             Time
                           </p>
-                          <p className="mt-2 font-display text-[1.45rem] leading-none text-[#56437C]">
+                          <p className="mt-2 font-display text-[1.45rem] leading-none text-[#3B235C]">
                             7:00 PM
                           </p>
-                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#7A669F]/88">
+                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#5A3D87]/88">
                             Onwards
                           </p>
                         </div>
@@ -401,26 +421,26 @@ const WalimaCard = () => {
                           <div className="absolute left-0 top-1/2 hidden h-px w-8 -translate-y-1/2 bg-gradient-to-r from-transparent to-[#DDD2F1]/45 md:block" />
                           <div className="absolute right-0 top-1/2 hidden h-px w-8 -translate-y-1/2 bg-gradient-to-l from-transparent to-[#DDD2F1]/45 md:block" />
 
-                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#9888B8]">
+                          <p className="font-ui text-[10px] uppercase tracking-[0.32em] text-[#6A518E]">
                             Venue
                           </p>
-                          <p className="mt-2 font-display text-[1.65rem] sm:text-[1.85rem] leading-tight text-[#56437C] drop-shadow-[0_2px_14px_rgba(255,255,255,0.08)]">
+                          <p className="mt-2 font-display text-[1.65rem] sm:text-[1.85rem] leading-tight text-[#3B235C] drop-shadow-[0_2px_14px_rgba(255,255,255,0.08)]">
                             Marabelle
                           </p>
-                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#7A669F]/82">
+                          <p className="mt-2 font-ui text-[12px] uppercase tracking-[0.22em] text-[#5A3D87]/82">
                             Reception &amp; Dinner
                           </p>
                         </div>
                       </div>
 
-                      <div className="mt-5 flex items-center justify-center gap-3 text-[#7A669F]">
+                      <div className="mt-5 flex items-center justify-center gap-3 text-[#5A3D87]">
                         <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#DDD2F1]/45" />
                         <div className="h-[6px] w-[6px] rounded-full bg-[#F7F5F0]/80" />
                         <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#DDD2F1]/45" />
                       </div>
 
                       <div className="mt-4 text-center">
-                        <p className="font-ui text-[13px] leading-relaxed text-[#49356E]/84">
+                        <p className="font-ui text-[13px] leading-relaxed text-[#2D1849]/84">
                           Lahore Garrison Golf & Country Club, Saddar Town, Lahore
                         </p>
                       </div>
@@ -432,7 +452,7 @@ const WalimaCard = () => {
                           rel="noreferrer"
                           whileHover={{ y: -2, scale: 1.015 }}
                           whileTap={{ scale: 0.985 }}
-                          className="group relative inline-flex w-full max-w-[240px] items-center justify-center overflow-hidden rounded-full border border-[#D2C7E7] bg-[#F8F5FC] px-6 py-3.5 text-center font-ui text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#49356E] shadow-[0_8px_24px_rgba(78,61,118,0.10)]"
+                          className="group relative inline-flex w-full max-w-[240px] items-center justify-center overflow-hidden rounded-full border border-[#D2C7E7] bg-[#F8F5FC] px-6 py-3.5 text-center font-ui text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#2D1849] shadow-[0_8px_24px_rgba(78,61,118,0.10)]"
                         >
                           <span className="absolute inset-0 bg-[linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.40)_20%,transparent_38%)] opacity-80 transition-transform duration-700 group-hover:translate-x-full" />
                           <span className="relative">Link to Location</span>
@@ -446,6 +466,20 @@ const WalimaCard = () => {
           </div>
         </motion.div>
       </motion.div>
+
+      {/* Bottom backdrop */}
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 right-0 z-[8]"
+        style={{
+          height: "340px",
+          backgroundImage: `url(${backdropBottom})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center bottom",
+          backgroundSize: "min(1100px,100%) auto",
+          filter: "none",
+          mixBlendMode: "normal",
+        }}
+      />
 
       {/* veil lift reveal */}
       <AnimatePresence>
